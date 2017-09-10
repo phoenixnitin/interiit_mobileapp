@@ -24,6 +24,10 @@ To build android app:
 
 $ ionic cordova build android
 
+Before performing any change to codes, change your working branch:
+
+$ git checkout work_in_progress
+
 You need to have android sdk.
 
 Substitute android for ios if not on a Linux.
