@@ -9,4 +9,51 @@
 
 <ion-content padding>
   <h3>You are at Contact Us page</h3>
+  <div padding>
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button value="MainContacts">
+      Main Contacts
+    </ion-segment-button>
+    <ion-segment-button value="AppDevelopers">
+      App Developers
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'AppDevelopers'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="ContactImages/mohanvamsi.jpg">
+      </ion-thumbnail>
+     <h2><b>Name:</b>Mohan Vamsi</h2>
+      <h3><b>Phone Number:</b>8106357947</h3>
+      <h4><b>Email:</b>mohanvamsi@gmail.com</h4>
+    </ion-item>
+    ...
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'MainContacts'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="ContactImages/p.jpg">
+      </ion-thumbnail>
+      <h2><b>Name:</b>Pawan Kalyan</h2>
+      <h3><b>Phone Number:</b>8106357947</h3>
+      <h4><b>Email:</b>Pawanism@gmail.com</h4>
+
+    </ion-item>
+     <ion-item>
+      <ion-thumbnail item-start>
+        <img src="ContactImages/p.jpg">
+      </ion-thumbnail>
+      <h2><b>Name:</b>Pawan Kalyan</h2>
+      <h3><b>Phone Number:</b>8106357947</h3>
+      <h4><b>Email:</b>Pawanism@gmail.com</h4>
+
+    </ion-item>
+    ...
+  </ion-list>
+</div>
+
 </ion-content>
