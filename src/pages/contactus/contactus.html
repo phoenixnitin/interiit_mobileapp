@@ -22,21 +22,22 @@
 
 <div [ngSwitch]="pet">
   <ion-list *ngSwitchCase="'AppDevelopers'">
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="ContactImages/mohanvamsi.jpg">
-      </ion-thumbnail>
-     <h2><b>Name:</b>Mohan Vamsi</h2>
-      <h3><b>Phone Number:</b>8106357947</h3>
-      <h4><b>Email:</b>mohanvamsi@gmail.com</h4>
-    </ion-item>
-    ...
+
+  <ion-item>
+    <ion-label>Coordinators</ion-label>
+    <ion-select [(ngModel)]="Coordinators">
+      <ion-option value="nes">WEBOPS</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+
   </ion-list>
 
   <ion-list *ngSwitchCase="'MainContacts'">
     <ion-item>
       <ion-thumbnail item-start>
-        <img src="ContactImages/p.jpg">
+        <img src="./resources/icon.png">
       </ion-thumbnail>
       <h2><b>Name:</b>Pawan Kalyan</h2>
       <h3><b>Phone Number:</b>8106357947</h3>
@@ -45,14 +46,13 @@
     </ion-item>
      <ion-item>
       <ion-thumbnail item-start>
-        <img src="ContactImages/p.jpg">
+        <img src="../assets/ContactImages/p.jpg">
       </ion-thumbnail>
       <h2><b>Name:</b>Pawan Kalyan</h2>
       <h3><b>Phone Number:</b>8106357947</h3>
       <h4><b>Email:</b>Pawanism@gmail.com</h4>
 
     </ion-item>
-    ...
   </ion-list>
 </div>
 
