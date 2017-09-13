@@ -25,14 +25,16 @@
 
   <ion-item>
     <ion-label>Coordinators</ion-label>
-    <ion-select [(ngModel)]="Coordinators">
+    <ion-select [(ngModel)]="Coordinators" (ionChange)="itemSelected(Coordinators)">
        
       <ion-option *ngFor="let item of items" >{{item.title}}</ion-option>
-     
+      
     </ion-select>
   </ion-item>
-
-
+  <div>
+  <p>{{data}}</p>
+  <!-- <p> {{phoneno}}</p> -->
+  </div>
 
   </ion-list>
 
