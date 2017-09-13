@@ -14,28 +14,31 @@
     <ion-segment-button value="MainContacts">
       Main Contacts
     </ion-segment-button>
-    <ion-segment-button value="AppDevelopers">
+    <ion-segment-button value="coordinators">
       App Developers
     </ion-segment-button>
   </ion-segment>
 </div>
 
 <div [ngSwitch]="pet">
-  <ion-list *ngSwitchCase="'AppDevelopers'">
+  <ion-list *ngSwitchCase="'coordinators'">
 
   <ion-item>
-    <ion-label>Coordinators</ion-label>
-    <ion-select [(ngModel)]="Coordinators">
+    <ion-label>coordinators</ion-label>
+    <ion-select [(ngModel)]="coordinators" (ionChange)="itemSelected(coordinators)">
        
-      <ion-option *ngFor="let item of items" >{{item.title}}</ion-option>
-     
+      <ion-option *ngFor="let item of items" >
+      {{item.title}} 
+      </ion-option>
     </ion-select>
+
   </ion-item>
-
-
+  <div>
+  <p>{{data}}</p>
+  </div>
 
   </ion-list>
-
+  
   <ion-list *ngSwitchCase="'MainContacts'">
     <ion-item>
       <ion-thumbnail item-start>
