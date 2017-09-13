@@ -9,4 +9,15 @@
 
 <ion-content padding>
   <h3>You are at Sports page</h3>
+  <button ion-item *ngFor="let item of items" (click)="itemSelected($event,item)">
+    <ion-card>
+            <img src="{{item.src}}"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{item.title}}
+                </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+</button>
+
 </ion-content>
