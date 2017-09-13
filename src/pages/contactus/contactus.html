@@ -31,9 +31,15 @@
       
     </ion-select>
   </ion-item>
-  <div>
-  <p>{{data}}</p>
-  <!-- <p> {{phoneno}}</p> -->
+  <div *ngFor="let d of cord_data">
+    <ion-item >
+      <ion-thumbnail item-start>
+        <img src="../assets/ContactImages/p.jpg">
+      </ion-thumbnail>
+      <h2 >{{d.name}}</h2>
+      <h3>{{d.phoneno}}</h3>
+
+    </ion-item>
   </div>
 
   </ion-list>
