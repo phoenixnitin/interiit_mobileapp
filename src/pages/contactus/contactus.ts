@@ -30,10 +30,10 @@ export class ContactUsPage {
             name: this.data[i],
             phoneno:this.phoneno[i]
           });
-        
+
       }
     }
-  
+
   if(name== "Finance"){
     this.data = ["sriram1","ashwin1","muqeeth1"];
     this.phoneno= ["1234567809","86384783432","7435234341"]
@@ -43,7 +43,7 @@ export class ContactUsPage {
         name: this.data[i],
         phoneno:this.phoneno[i]
       });
-    
+
   }
 }
 if(name== "Sponsorship and PR"){
@@ -55,12 +55,8 @@ if(name== "Sponsorship and PR"){
       name: this.data[i],
       phoneno:this.phoneno[i]
     });
-  
+
   }
 }
-<<<<<<< HEAD
-=======
-  }
->>>>>>> cb5d836be6831e0c4956e64d459941e791e71a16
   }
   }
