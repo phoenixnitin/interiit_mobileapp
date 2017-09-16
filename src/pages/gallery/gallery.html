@@ -7,6 +7,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>You are at Gallery page</h3>
+<ion-content padding >
+    <h2 align="center">Welcome to the Inter IIT Gallery!</h2>
+    <ion-card>    <ion-slides class="image-slider" loop="true" slidesPerView="1" effect="coverflow" > 
+       <ion-slide *ngFor="let img of images" >
+        <img src="assets/img/{{img}}" class="img" imageViewer>
+      </ion-slide> 
+    </ion-slides>
+     </ion-card>
+
+     <ion-card *ngFor="let vid of videos">
+       <ion-card-title style="font-family:sans-serif">
+        <b>{{vid.title}}</b>
+       </ion-card-title>
+       <ion-card-content>
+        <div class="video-container">
+        <iframe  width="854" height="480" [src]="vid.video | youtube" frameborder="0" allowfullscreen></iframe>
+      </div>  
+      </ion-card-content>
+     </ion-card>
+    
+  
 </ion-content>
