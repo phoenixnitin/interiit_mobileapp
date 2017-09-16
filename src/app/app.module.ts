@@ -15,6 +15,9 @@ import { ContactUsPage } from '../pages/contactus/contactus';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { Youtube } from '../pipes/youtube/youtube';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,11 +28,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ResultPage,
     SponsorshipPage,
     MapsPage,
-    ContactUsPage
+    ContactUsPage,
+    Youtube
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
