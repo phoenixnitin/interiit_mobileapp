@@ -1,23 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Sports</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h3>You are at Sports page</h3>
-  <button ion-item *ngFor="let item of items" (click)="itemSelected($event,item)">
-    <ion-card>
-            <img src="{{item.src}}"/>
-            <ion-card-content>
-              <ion-card-title>
-                {{item.title}}
-                </ion-card-title>
-            </ion-card-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Sports</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h3>You are at Sports page</h3>
+    <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of items1" > 
+          <ion-card (click)="itemSelected(item)">
+           <ion-item >
+             <ion-avatar>
+               <img src="{{item.src}}">
+             </ion-avatar>
+             <p>{{item.title}}</p>
+           </ion-item>
           </ion-card>
-</button>
+          </ion-col>
+          <ion-col *ngFor="let ite of items2"> 
+          <ion-card (click)="itemSelected(ite)">
+          <ion-item>
+             <ion-avatar>
+               <img src="{{ite.src}}">
+             </ion-avatar>
+             <p>{{ite.title}}</p>
+           </ion-item>
+          </ion-card>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
 
-</ion-content>
+  </ion-content>
