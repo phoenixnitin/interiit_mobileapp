@@ -24,6 +24,7 @@
         "@ionic-native/splash-screen": "3.12.1",
         "@ionic-native/status-bar": "3.12.1",
         "@ionic/storage": "2.0.1",
+        "angular": "^1.6.6",
         "cordova-android": "^6.2.3",
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-device": "^1.1.4",
@@ -34,6 +35,7 @@
         "ionic-img-viewer": "^2.6.1",
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
+        "ngmap": "^1.18.4",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
         "zone.js": "0.8.12"

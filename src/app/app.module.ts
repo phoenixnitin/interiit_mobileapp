@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -52,6 +52,8 @@ import { Youtube } from '../pipes/youtube/youtube';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  
 })
 export class AppModule {}
