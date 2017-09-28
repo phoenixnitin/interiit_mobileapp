@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,7 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
-
+import { GoogleMaps } from '../providers/google-maps/google-maps';
+import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
+import { Connectivity } from '../providers/connectivity/connectivity';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,6 +37,7 @@ import { Youtube } from '../pipes/youtube/youtube';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     IonicImageViewerModule
   ],
@@ -51,9 +56,11 @@ import { Youtube } from '../pipes/youtube/youtube';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GoogleMaps,
+    Connectivity,
+    GoogleMapsCluster
+  ]
   
 })
 export class AppModule {}
