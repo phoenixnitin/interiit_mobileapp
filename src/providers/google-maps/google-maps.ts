@@ -13,7 +13,7 @@ export class GoogleMaps {
   mapLoaded: any;
   mapLoadedObserver: any;
   currentMarker: any;
-  apiKey: string;
+  apiKey: string="AIzaSyAV9zfTlFe-7L6h0pohlbnXAy8qMojUBnU";
  
   constructor(public connectivityService: Connectivity) {
  
@@ -88,11 +88,11 @@ export class GoogleMaps {
       Geolocation.getCurrentPosition().then((position) => {
  
         //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        let latLng = new google.maps.LatLng(-31.563910, 147.154312);
+        let latLng = new google.maps.LatLng(12.9952, 80.2380);
  
         let mapOptions = {
           center: latLng,
-          zoom: 2,
+          zoom: 16,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
  

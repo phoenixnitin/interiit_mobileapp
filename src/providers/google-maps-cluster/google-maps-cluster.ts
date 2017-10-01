@@ -685,7 +685,7 @@ export class GoogleMapsCluster {
   "lat": '12.988665',
   "lng": '80.231080',
   "description": 'Thane'
-},
+}
 
 
 ];}
@@ -693,17 +693,18 @@ export class GoogleMapsCluster {
 addCluster(map){
  
         if(google.maps){
- 
+ 			console.log("Inside addCluster");
             //Convert locations into array of markers
             let markers = this.locations.map((location) => {
                 var latLng = new google.maps.LatLng(location.lat, location.lng); 
+                console.log(location.title);
                 return new google.maps.Marker({
                     position: latLng,
                     label: location.title
                 });
             });
  
-            this.markerCluster = new MarkerClusterer(map, markers, {imagePath: 'assets/m'});
+            this.markerCluster = new MarkerClusterer(map, markers);
  
         } else {
             console.warn('Google maps needs to be loaded before adding a cluster');

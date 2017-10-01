@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Network } from '@ionic-native/network';
+import { Network } from 'ionic-native';
 import { Platform } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
  
@@ -15,16 +15,16 @@ export class Connectivity {
   }
  
   isOnline(): boolean {
-    if(this.onDevice && Network.connection){
-      return Network.connection !== Connection.NONE;
+    if(this.onDevice && Network['connection']){
+      return Network['connection'] !== Connection.NONE;
     } else {
       return navigator.onLine;
     }
   }
  
   isOffline(): boolean {
-    if(this.onDevice && Network.connection){
-      return Network.connection === Connection.NONE;
+    if(this.onDevice && Network['connection']){
+      return Network['connection'] === Connection.NONE;
     } else {
       return !navigator.onLine;  
     }
