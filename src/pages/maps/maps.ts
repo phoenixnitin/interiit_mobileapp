@@ -16,14 +16,13 @@ export class MapsPage {
     @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
  
     constructor(public platform: Platform, public maps: GoogleMaps, public mapCluster: GoogleMapsCluster) {
- 
+
     }
- 
     ionViewDidLoad(): void {
  
         this.platform.ready().then(() => {
- 
             let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement).then((map) => {
+    console.log("Inside Maps.ts");
     this.mapCluster.addCluster(map);
 });
 });
