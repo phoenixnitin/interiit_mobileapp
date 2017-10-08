@@ -1,5 +1,6 @@
 // "use strict";
 
+<<<<<<< HEAD
 // angular.module('InstiMap',['uiGmapgoogle-maps'])
 // 		// .config(function(uiGmapGoogleMapApiProvider) {
 // 		// 	 uiGmapGoogleMapApiProvider.configure({
@@ -19,3 +20,6 @@
 // 		  	});
 
 // 		});
+=======
+angular.module('InstiMap',['ngmap']);
+>>>>>>> f79c3a81f5c678feacbbf6352a9719b49f3c8a32
