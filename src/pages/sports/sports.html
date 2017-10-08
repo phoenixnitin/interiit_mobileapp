@@ -9,29 +9,55 @@
   
   <ion-content padding>
     <h3>You are at Sports page</h3>
-    <ion-grid>
-        <ion-row>
-          <ion-col *ngFor="let item of items1" > 
-          <ion-card (click)="itemSelected(item)">
-           <ion-item >
-             <ion-avatar>
-               <img src="{{item.src}}">
-             </ion-avatar>
-             <p>{{item.title}}</p>
-           </ion-item>
-          </ion-card>
-          </ion-col>
-          <ion-col *ngFor="let ite of items2"> 
-          <ion-card (click)="itemSelected(ite)">
-          <ion-item>
-             <ion-avatar>
-               <img src="{{ite.src}}">
-             </ion-avatar>
-             <p>{{ite.title}}</p>
-           </ion-item>
-          </ion-card>
-          </ion-col>
-        </ion-row>
-    </ion-grid>
-
+    <div class="row" *ngFor="let item of items;let i=index">
+      <div *ngIf="i % 4 === 0">
+         <div class="row">
+            <div class="col col-50" *ngIf="i < items.length">
+              <ion-card>
+                <img src="{{items[i].src}}"/>
+                <ion-card-content>
+                  <ion-card-title>
+                    {{items[i].title}}
+                  </ion-card-title>
+                </ion-card-content>
+              </ion-card> 
+          </div>
+     
+          <div class="col col-50" *ngIf="i + 1 < items.length">
+            <ion-card>
+              <img src="{{items[i+1].src}}"/>
+              <ion-card-content>
+                <ion-card-title>
+                  {{items[i+1].title}}
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>            
+          </div> 
+       </div>
+     
+       <div class="row">
+       <div class="col col-50" *ngIf="i + 2 < items.length">
+        <ion-card>
+          <img src="{{items[i+2].src}}"/>
+          <ion-card-content>
+            <ion-card-title>
+              {{items[i+2].title}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>            
+         </div>
+     
+         <div class="col col-50" *ngIf="i + 3 < items.length">
+          <ion-card>
+            <img src="{{items[i+3].src}}"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{items[i+3].title}}
+              </ion-card-title>
+            </ion-card-content>
+          </ion-card> 
+         </div>
+        </div>
+     </div>
+    </div>
   </ion-content>
