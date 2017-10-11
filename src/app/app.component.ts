@@ -10,6 +10,7 @@ import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
 //import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
+declare var FCMPlugin;
 
 @Component({
   templateUrl: 'app.html'
@@ -45,6 +46,31 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+       if(typeof(FCMPlugin) !== "undefined"){
+        FCMPlugin.getToken(function(t){
+          console.log("Use this token for sending device specific messages\nToken: " + t);
+          FCMPlugin.subscribeToTopic("msgall");
+        }, function(e){
+          console.log("Uh-Oh!\n"+e);
+        });
+
+        FCMPlugin.onNotification(function(d){
+          console.log("notification",d);
+          if(d.wasTapped){
+            // Background recieval (Even if app is closed),
+            //   bring up the message in UI
+            console.log('notification tapped');
+          } else {
+            // Foreground recieval, update UI or what have you...
+          }
+        }, function(msg){
+          // No problemo, registered callback
+          console.log(msg);
+        }, function(err){
+          console.log("Arf, no good mate... " + err);
+        });
+      } else console.log("Notifications disabled, only provided in Android/iOS environment");
     });
   }
 

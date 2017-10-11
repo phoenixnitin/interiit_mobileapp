@@ -1,6 +1,6 @@
 {
   "name": "interiit_mobileapp",
-  "app_id": "",
+  "app_id": "com.interiit.android",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
