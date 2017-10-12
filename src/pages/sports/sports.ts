@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import {ListPage} from '../list/list';
 @Component({
   selector: 'page-sports',
   templateUrl: 'sports.html'
@@ -20,7 +20,9 @@ export class SportsPage {
       });
     }
   }
-itemSelected(event,item){
-  console.log(item.title);
+itemSelected(item){
+  this.navCtrl.push(ListPage, {
+    item: item
+  });
 }
 }

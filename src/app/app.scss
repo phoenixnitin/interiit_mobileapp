@@ -21,3 +21,8 @@
   text-align: left;
   color: black;
 }
+.activeHighlight {
+  background-color: map-get($colors,light);
+  -webkit-text-fill-color: map-get($colors,secondary);
+}
+  

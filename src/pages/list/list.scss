@@ -1,3 +1,30 @@
 page-list {
-
+  $num-of-tabs: 3;
+  
+   @mixin tabs {
+     @for $i from 1 through $num-of-tabs {
+       &:nth-of-type(#{$i}) {
+         &.segment-activated {
+           ~ .slide {
+             left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+           }
+         }
+       }
+     }
+   }
+   .segment-button {
+    border: 0 !important;
+    @include tabs;
+  }
+ 
+  .slide {
+    background: dodgerblue;
+    width: calc(100% / #{$num-of-tabs});
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 4px);
+    transition: left 0.3s ease-out;
+  }
+    
 }

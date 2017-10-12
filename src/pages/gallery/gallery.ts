@@ -1,20 +1,41 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, OnInit} from '@angular/core';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-gallery',
   templateUrl: 'gallery.html'
 })
-export class GalleryPage {
-  images = ['1.png','2.png','3.png','4.png'];
-  videos: any[] = [
-    {
-      title: 'Inter IIT 2017 Logo Revealed',
-      video: 'https://www.youtube.com/embed/3_7_w6HuJJQ',
-    }
-  ]
-  constructor(public navCtrl: NavController) {
+export class GalleryPage implements OnInit{
+  gallery: string = "photos";
+  isAndroid: boolean = false;
+  imageArray;
+  videoArray;
+  constructor(private _http : Http){
 
   }
+  // onclick(){
+  //     console.log(this.imageArray);
+  // }
 
+  ngOnInit(){
+
+          
+          this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1EcJRWQPx_IEjsq4EBeOoHfSSjqpxbziqdlFm0JsNkeI&sheet=Image')
+                              .subscribe(res => {
+                                  this.imageArray = res.json().Image;
+                              });
+                            
+
+ 
+ 
+    
+
+        this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1EcJRWQPx_IEjsq4EBeOoHfSSjqpxbziqdlFm0JsNkeI&sheet=Video')
+            .subscribe(res => {
+                this.videoArray = res.json().Video;
+            });
+          }
+        
+  
 }

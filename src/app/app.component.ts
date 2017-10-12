@@ -8,7 +8,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
-import { MapsPage } from '../pages/maps/maps';
+// import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 
 @Component({
@@ -18,23 +18,24 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-
-  pages: Array<{title: string, component: any}>;
+  activePage: any;
+  pages: Array<{title: string, component: any, icon:string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Gallery', component: GalleryPage },
-      { title: 'Sports', component: SportsPage },
-      { title: 'Results', component: ResultPage },
-      { title: 'Sponsorship', component: SponsorshipPage },
-      { title: 'Maps', component: MapsPage },
-      { title: 'Contact Us', component: ContactUsPage },
+      { title: 'Home', component: HomePage ,icon:'home'},
+      // { title: 'List', component: ListPage ,icon:'home'},
+      { title: 'Gallery', component: GalleryPage ,icon:'photos' },
+      { title: 'Sports', component: SportsPage ,icon:'home' },
+      { title: 'Results', component: ResultPage ,icon:'home' },
+      { title: 'Sponsorship', component: SponsorshipPage ,icon:'home' },
+      // { title: 'Maps', component: MapsPage },
+      { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
     ];
+    this.activePage=this.pages[0];
 
   }
 
@@ -51,5 +52,9 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+    this.activePage=page;
+  }
+  checkActive(page){
+    return page==this.activePage;
   }
 }

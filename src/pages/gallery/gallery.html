@@ -1,31 +1,97 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Gallery</ion-title>
   </ion-navbar>
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
 </ion-header>
 
 <ion-content padding >
-    <h2 align="center">Welcome to the Inter IIT Gallery!</h2>
-    <ion-card>    <ion-slides class="image-slider" loop="true" slidesPerView="1" effect="coverflow" >
-       <ion-slide *ngFor="let img of images" >
-        <img src="assets/img/{{img}}" class="img" imageViewer>
+  <div padding>
+    <ion-segment [(ngModel)]="gallery">
+      <ion-segment-button value="photos">
+        Photos
+      </ion-segment-button>
+      <ion-segment-button value="videos">
+        Videos
+      </ion-segment-button>
+    </ion-segment>
+  </div>   
+
+  
+
+  <div [ngSwitch]="gallery">
+    <!-- <ion-card >    <ion-slides class="image-slider" loop="true" slidesPerView="1" effect="coverflow" >
+       <ion-slide *ngFor="let img of imageArray" >
+        <img src="{{img.imageURL}}" class="img" imageViewer>
       </ion-slide>
     </ion-slides>
-     </ion-card>
+     </ion-card> -->
+    <div *ngSwitchCase="'photos'">
+    <div class="row" *ngFor="let img of imageArray; let i= index; " >
+      <div *ngIf="i % 4 === 0 ">
+        <div class="row">
+            <div class="col col-25" *ngIf="imageArray.length > i">
+              <img src="{{imageArray[i].imageURL}}" width="100%" />    
+          </div>
+          <div class="col col-25" *ngIf="imageArray.length > i+1">
+              <img src="{{imageArray[i+1].imageURL}}" width="100%" />
+          </div>
+        </div>  
 
-     <ion-card *ngFor="let vid of videos">
+      <div class="row">        
+          <div class="col col-25" *ngIf="imageArray.length > i+2">
+              <img src="{{imageArray[i+2].imageURL}}" width="100%" />
+          </div>
+          <div class="col col-25" *ngIf="imageArray.length > i+3">
+              <img src="{{imageArray[i+3].imageURL}}" width="100%" />
+          </div>
+        </div>    
+    </div>
+    </div> 
+        
+  </div>
+    
+    <div *ngSwitchCase="'videos'">
+        
+        <div class="row"*ngFor="let vid of videoArray; let i= index; " >
+            <div *ngIf="i % 4 === 0 ">
+              <div class="row">
+                  <div class="col col-25" *ngIf="videoArray.length > i">
+                    <img src="{{videoArray[i].thumbnailURL}}" width="100%" />    
+                </div>
+                <div class="col col-25" *ngIf="videoArray.length > i+1">
+                    <img src="{{videoArray[i+1].thumbnailURL}}" width="100%" />
+                </div>
+              </div>  
+      
+            <div class="row">        
+                <div class="col col-25" *ngIf="videoArray.length > i+2">
+                    <img src="{{videoArray[i+2].thumbnailURL}}" width="100%" />
+                </div>
+                <div class="col col-25" *ngIf="videoArray.length > i+3">
+                    <img src="{{videoArray[i+3].thumbnailURL}}" width="100%" />
+                </div>
+              </div>    
+          </div>
+          </div>
+          
+      <!-- <ion-card *ngFor="let vid of videos" >
        <ion-card-title style="font-family:sans-serif; text-align: center;">
         <b>{{vid.title}}</b>
        </ion-card-title>
        <ion-card-content>
         <div class="video-container">
-        <iframe  width="854" height="480" [src]="vid.video | youtube" frameborder="0" allowfullscreen></iframe>
+        <iframe  width="854" height="480" [src]="vid.video | youtube" frameborder="0" allowfullscreen></iframe>   
       </div>
       </ion-card-content>
-     </ion-card>
-
+     </ion-card>  -->
+    </div> 
+    </div>     
+     
 
 </ion-content>

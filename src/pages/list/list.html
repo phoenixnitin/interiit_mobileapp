@@ -1,23 +1,34 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar no-border-bottom>
+ <ion-title>swipedtabs</ion-title>        
+    </ion-navbar>
+   <!-- </ion-header> -->
+   <ion-toolbar no-border-top>
+   <ion-segment color="secondary" [(ngModel)]="tabs">
+      <ion-segment-button (click)="selectTab(0)"
+                          value="0">Tab1
+   </ion-segment-button>
+<ion-segment-button (click)="selectTab(1)"
+                   value="1">Tab2
+</ion-segment-button>
+<ion-segment-button (click)="selectTab(2)"
+                   value="2">Tab3
+</ion-segment-button> 
+<div id="slide" class="slide"></div>
+</ion-segment>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
-</ion-content>
+</ion-toolbar>
+</ion-header>
+   <ion-content>
+    <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
+      <ion-slide>
+        <h1>ContentTab 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>ContentTab 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>ContentTab 3</h1>
+      </ion-slide>
+    </ion-slides>
+   </ion-content>
