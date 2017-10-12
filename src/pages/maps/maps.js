@@ -1,3 +1,3 @@
-// "use strict";
+"use strict";
 
-// angular.module('InstiMap',['ngmap']);
+angular.module('InstiMap',['ngmap']);

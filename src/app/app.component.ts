@@ -8,7 +8,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
-// import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 
 @Component({
@@ -32,7 +32,7 @@ export class MyApp {
       { title: 'Sports', component: SportsPage ,icon:'home' },
       { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Sponsorship', component: SponsorshipPage ,icon:'home' },
-      // { title: 'Maps', component: MapsPage },
+      { title: 'Maps', component: MapsPage ,icon:'home'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
     ];
     this.activePage=this.pages[0];

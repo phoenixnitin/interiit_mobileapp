@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-// import * as jQuery from 'jquery';
+import * as jQuery from 'jquery';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -10,16 +10,16 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
-// import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
-// import { GoogleMaps } from '../providers/google-maps/google-maps';
-// import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
-// import { Connectivity } from '../providers/connectivity/connectivity';
+import { GoogleMaps } from '../providers/google-maps/google-maps';
+import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
+import { Connectivity } from '../providers/connectivity/connectivity';
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +30,7 @@ import { Youtube } from '../pipes/youtube/youtube';
     ResultPage,
     SponsorshipPage,
     
-    // MapsPage,yy
+    MapsPage,
     ContactUsPage,
     Youtube
   ],
@@ -50,7 +50,7 @@ import { Youtube } from '../pipes/youtube/youtube';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
     
     ContactUsPage
   ],
@@ -58,9 +58,9 @@ import { Youtube } from '../pipes/youtube/youtube';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    // GoogleMaps,
-    // Connectivity,
-    // GoogleMapsCluster
+    GoogleMaps,
+    Connectivity,
+    GoogleMapsCluster
   ]
 
 })

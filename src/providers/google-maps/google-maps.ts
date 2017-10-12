@@ -1,161 +1,161 @@
-// import { Injectable } from '@angular/core';
-// // import { Platform } from 'ionic-angular';
-// import { Connectivity } from '../connectivity/connectivity';
-// import { Geolocation } from 'ionic-native';
+import { Injectable } from '@angular/core';
+// import { Platform } from 'ionic-angular';
+import { Connectivity } from '../connectivity/connectivity';
+import { Geolocation } from 'ionic-native';
 
-// @Injectable()
-// export class GoogleMaps {
+@Injectable()
+export class GoogleMaps {
 
-//   mapElement: any;
-//   pleaseConnect: any;
-//   map: any;
-//   mapInitialised: boolean = false;
-//   mapLoaded: any;
-//   mapLoadedObserver: any;
-//   currentMarker: any;
-//   // apiKey: string;
+  mapElement: any;
+  pleaseConnect: any;
+  map: any;
+  mapInitialised: boolean = false;
+  mapLoaded: any;
+  mapLoadedObserver: any;
+  currentMarker: any;
+  // apiKey: string;
 
-//   apiKey: string="AIzaSyAV9zfTlFe-7L6h0pohlbnXAy8qMojUBnU";
+  apiKey: string="AIzaSyAV9zfTlFe-7L6h0pohlbnXAy8qMojUBnU";
 
-//   constructor(public connectivityService: Connectivity) {
+  constructor(public connectivityService: Connectivity) {
 
-//   }
+  }
 
-//   init(mapElement: any, pleaseConnect: any): Promise<any> {
+  init(mapElement: any, pleaseConnect: any): Promise<any> {
 
-//     this.mapElement = mapElement;
-//     this.pleaseConnect = pleaseConnect;
+    this.mapElement = mapElement;
+    this.pleaseConnect = pleaseConnect;
 
-//     return this.loadGoogleMaps();
+    return this.loadGoogleMaps();
 
-//   }
+  }
 
-//   loadGoogleMaps(): Promise<any> {
+  loadGoogleMaps(): Promise<any> {
 
-//     return new Promise((resolve) => {
+    return new Promise((resolve) => {
 
-//       if(typeof google == "undefined" || typeof google.maps == "undefined"){
+      if(typeof google == "undefined" || typeof google.maps == "undefined"){
 
-//         console.log("Google maps JavaScript needs to be loaded.");
-//         this.disableMap();
+        console.log("Google maps JavaScript needs to be loaded.");
+        this.disableMap();
 
-//         if(this.connectivityService.isOnline()){
+        if(this.connectivityService.isOnline()){
 
-//           window['mapInit'] = () => {
+          window['mapInit'] = () => {
 
-//             this.initMap().then((map) => {
-//               resolve(map);
-//             });
+            this.initMap().then((map) => {
+              resolve(map);
+            });
 
-//             this.enableMap();
-//           }
+            this.enableMap();
+          }
 
-//           let script = document.createElement("script");
-//           script.id = "googleMaps";
+          let script = document.createElement("script");
+          script.id = "googleMaps";
 
-//           if(this.apiKey){
-//             script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
-//           } else {
-//             script.src = 'http://maps.google.com/maps/api/js?callback=mapInit';
-//           }
+          if(this.apiKey){
+            script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
+          } else {
+            script.src = 'http://maps.google.com/maps/api/js?callback=mapInit';
+          }
 
-//           document.body.appendChild(script);
+          document.body.appendChild(script);
 
-//         }
-//       }
-//       else {
+        }
+      }
+      else {
 
-//         if(this.connectivityService.isOnline()){
-//           this.initMap();
-//           this.enableMap();
-//         }
-//         else {
-//           this.disableMap();
-//         }
+        if(this.connectivityService.isOnline()){
+          this.initMap();
+          this.enableMap();
+        }
+        else {
+          this.disableMap();
+        }
 
-//       }
+      }
 
-//       // this.addConnectivityListeners();
+      // this.addConnectivityListeners();
 
-//     });
+    });
 
-//   }
+  }
 
-//   initMap(): Promise<any> {
+  initMap(): Promise<any> {
 
-//     this.mapInitialised = true;
+    this.mapInitialised = true;
 
-//     return new Promise((resolve) => {
+    return new Promise((resolve) => {
 
-//       Geolocation.getCurrentPosition().then((position) => {
+      Geolocation.getCurrentPosition().then((position) => {
 
-//         //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//         // let latLng = new google.maps.LatLng(-31.563910, 147.154312);
+        //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        // let latLng = new google.maps.LatLng(-31.563910, 147.154312);
 
-//         let latLng = new google.maps.LatLng(12.9952, 80.2380);
+        let latLng = new google.maps.LatLng(12.9952, 80.2380);
 
-//         let mapOptions = {
-//           center: latLng,
-//           zoom: 16,
-//           mapTypeId: google.maps.MapTypeId.ROADMAP
-//         }
+        let mapOptions = {
+          center: latLng,
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
 
-//         this.map = new google.maps.Map(this.mapElement, mapOptions);
-//         resolve(this.map);
+        this.map = new google.maps.Map(this.mapElement, mapOptions);
+        resolve(this.map);
 
-//       });
+      });
 
-//     });
+    });
 
-//   }
+  }
 
-//   disableMap(): void {
+  disableMap(): void {
 
-//     if(this.pleaseConnect){
-//       this.pleaseConnect.style.display = "block";
-//     }
+    if(this.pleaseConnect){
+      this.pleaseConnect.style.display = "block";
+    }
 
-//   }
+  }
 
-//   enableMap(): void {
+  enableMap(): void {
 
-//     if(this.pleaseConnect){
-//       this.pleaseConnect.style.display = "none";
-//     }
+    if(this.pleaseConnect){
+      this.pleaseConnect.style.display = "none";
+    }
 
-//   }
+  }
 
-//   // addConnectivityListeners(): void {
-//   //
-//   //   this.connectivityService.watchOnline().subscribe(() => {
-//   //
-//   //     console.log("online");
-//   //
-//   //     setTimeout(() => {
-//   //
-//   //       if(typeof google == "undefined" || typeof google.maps == "undefined"){
-//   //         this.loadGoogleMaps();
-//   //       }
-//   //       else {
-//   //         if(!this.mapInitialised){
-//   //           this.initMap();
-//   //         }
-//   //
-//   //         this.enableMap();
-//   //       }
-//   //
-//   //     }, 2000);
-//   //
-//   //   });
-//   //
-//   //   this.connectivityService.watchOffline().subscribe(() => {
-//   //
-//   //     console.log("offline");
-//   //
-//   //     this.disableMap();
-//   //
-//   //   });
-//   //
-//   // }
+  // addConnectivityListeners(): void {
+  //
+  //   this.connectivityService.watchOnline().subscribe(() => {
+  //
+  //     console.log("online");
+  //
+  //     setTimeout(() => {
+  //
+  //       if(typeof google == "undefined" || typeof google.maps == "undefined"){
+  //         this.loadGoogleMaps();
+  //       }
+  //       else {
+  //         if(!this.mapInitialised){
+  //           this.initMap();
+  //         }
+  //
+  //         this.enableMap();
+  //       }
+  //
+  //     }, 2000);
+  //
+  //   });
+  //
+  //   this.connectivityService.watchOffline().subscribe(() => {
+  //
+  //     console.log("offline");
+  //
+  //     this.disableMap();
+  //
+  //   });
+  //
+  // }
 
-// }
+}
