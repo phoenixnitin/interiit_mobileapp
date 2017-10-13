@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,7 +12,7 @@ export class GalleryPage implements OnInit{
   isAndroid: boolean = false;
   imageArray;
   videoArray;
-  constructor(private _http : Http){
+  constructor(private _http : Http, private _photoViewer: PhotoViewer){
 
   }
   // onclick(){
@@ -37,5 +38,8 @@ export class GalleryPage implements OnInit{
             });
           }
         
-  
+    ViewPhoto(url,title){
+        this._photoViewer.show(url,title);
+    }
+
 }
