@@ -1,5 +1,47 @@
 page-home {
     
-        
+  #gridcontent{
+position:absolute;
+top:20%;
+width:90%;
+left:5%;
+justify-content: center;
+}
+
+.fabons{
+  background:black;
+  color:white;
+}
+
+.icons{
+ width:40%;
+ height:40%;
+ font-size: 185%;
+ padding-top:15%;
+}
+
+.ghost-button {
+  display:inline-block;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  text-align:center;
+  outline: none;
+  background:black;
+  opacity:0.9;
+  text-decoration: none;
+  width: 75px;
+  height:75px;
+  border-radius:50%;
+  font-size: 15px;
+  line-height: 1.33;
+  vertical-align:middle;
+}
+
+.ion-col
+{
+  display:flex;
+  justify-content:center;
+  height:90px;
+}      
         
 }

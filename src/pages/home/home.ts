@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
+import { MapsPage } from '../maps/maps';
+import { SponsorshipPage } from '../sponsorship/sponsorship';
+import { ResultPage } from '../result/result';
+import { SportsPage } from '../sports/sports';
+import { GalleryPage } from '../gallery/gallery';
+import { ContactUsPage } from '../contactus/contactus';
+
 
 @Component({
   selector: 'page-home',
@@ -10,5 +17,22 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+gomaps(){
+    this.navCtrl.push(MapsPage);
+  }
+gospons(){
+    this.navCtrl.push(SponsorshipPage);
+  }
+goresult(){
+    this.navCtrl.push(ResultPage);
+  }
+gosports(){
+    this.navCtrl.push(SportsPage);
+  }
+gogallery(){
+    this.navCtrl.push(GalleryPage);
+  }
+gocontact(){
+    this.navCtrl.push(ContactUsPage);
+  }        
 }

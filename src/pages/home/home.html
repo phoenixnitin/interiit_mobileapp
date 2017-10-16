@@ -7,15 +7,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background: url('assets/img/shoes2.jpg') no-repeat center center fixed;background-size: cover;" >
   
-  <h3>Welcome to Inter-IIT  2017-18</h3>
+<ion-fab top right>
+    <button ion-fab color="dark"><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
+      <a href="https://www.facebook.com/interiit17/"><button ion-fab style="background-color:transparent;"><ion-icon name="logo-facebook" class="fabons"></ion-icon></button></a>
+      
+      <button ion-fab style="background-color:transparent;"><ion-icon name="logo-twitter" class="fabons"></ion-icon></button>
+      
+      <a href="https://www.youtube.com/channel/UCF9MpmTR7MBjFj8t426aA3w"><button ion-fab style="background-color:transparent;"><ion-icon name="logo-youtube" class="fabons"></ion-icon></button></a>
+    </ion-fab-list>
+  </ion-fab>
+ 
+<ion-grid id="gridcontent">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-row style="width:100%;">
+    <ion-col col-4 text-center><button class="ghost-button" (click)="gomaps()"><ion-icon class="icons" name="ios-navigate"></ion-icon>Maps</button></ion-col>
+    <ion-col col-4 text-center><button class="ghost-button" (click)="gospons()" center><ion-icon name="logo-usd" class="icons"></ion-icon>Spons</button></ion-col>
+    <ion-col col-4 text-center><button class="ghost-button" (click)="goresult()"><ion-icon name="ios-megaphone" class="icons"></ion-icon>Result</button></ion-col>
+  </ion-row>
+  
+  <ion-row style="width:100%;">
+    <ion-col col-4 text-center><button class="ghost-button" (click)="gosports()"><ion-icon name="ios-american-football" class="icons"></ion-icon>Sports</button></ion-col>
+    <ion-col col-4 text-center><button class="ghost-button" (click)="gogallery()"><ion-icon name="ios-images" class="icons"></ion-icon>Gallery</button></ion-col>
+    <ion-col col-4 text-center><button class="ghost-button" (click)="gocontact()"><ion-icon name="ios-mail" class="icons"></ion-icon>Contact</button></ion-col>
+  </ion-row>
 
-  <ion-content class="card-background-page">
+</ion-grid>
+
+<div style="text-align:center;position:relative;top:60%;margin:10%;color:white">
+  <h3 style="color:#3399ff;">About Us</h3>
+<p><b>Inter IIT Sports Meet is the annual sports tournament of the Indian Institutes of Technology. It is organized in December every year, with the Aquatics events held separately in October. The seven old IITs take turns hosting the event. Inter IIT Sports Meet (or just Inter IIT, as students of the IITs call it) is the only event wherein all the IITs participate.</b></p>
+</div>
+
+<!--  <ion-content class="card-background-page">
     
       <ion-card>
         <img src="../assets/welcome.jpg"/>
@@ -23,6 +49,7 @@
       </ion-card>
   </ion-content>
 
-  
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+ 
+  <button ion-button secondary menuToggle>Toggle Menu</button>--> 
 </ion-content>
