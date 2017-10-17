@@ -4,8 +4,12 @@ page-home {
 position:absolute;
 top:20%;
 width:90%;
-left:5%;
+left:9%;
 justify-content: center;
+}
+
+.no-scroll{
+  overflow-y: hidden !important;
 }
 
 .fabons{
