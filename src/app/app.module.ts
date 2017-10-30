@@ -62,7 +62,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     SplashScreen,
     // GoogleMaps,
     Connectivity,
-    PhotoViewer
+    PhotoViewer,
     // GoogleMapsCluster
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

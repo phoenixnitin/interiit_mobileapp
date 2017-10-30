@@ -33,11 +33,11 @@ export class MyApp {
       // { title: 'List', component: ListPage ,icon:'home'},
       { title: 'Gallery', component: GalleryPage ,icon:'photos' },
       { title: 'Sports', component: SportsPage ,icon:'home' },
-      { title: 'Results', component: ResultPage ,icon:'home' },
-      { title: 'Sponsorship', component: SponsorshipPage ,icon:'home' },
-      //{ title: 'Maps', component: MapsPage ,icon:'home'},
+      // { title: 'Results', component: ResultPage ,icon:'home' },
+      // { title: 'Sponsorship', component: SponsorshipPage ,icon:'home' },
+      // { title: 'Maps', component: MapsPage ,icon:'home'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
-      { title: 'Notification', component: NotificationPage, icon:'notification'}
+      { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
     ];
     this.activePage=this.pages[0];
 

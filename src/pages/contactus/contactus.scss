@@ -1,3 +1,22 @@
-page-home {
-
+page-contactus {
+  .item-md{
+    ion-thumbnail{
+      img{
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
+  .img-thumbnail{
+    background-color: #e3e3e3;
+    padding: 2px;
+  }
+  .item-md{
+    p{
+      line-height: 1.7em;
+      b{
+        font-size: 18px;
+      }
+    }
+  }
 }

@@ -2,14 +2,14 @@
   <ion-header>
     <ion-toolbar>
       <img src="https://joyofgiving.alumni.iitm.ac.in/data/gjafprojects/1503919314_inter_iit_logo10.jpg" width=auto height=210>
-      
+
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list no-lines>
       <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)"(click)="openPage(p)">
-        <ion-icon item-start [name]="p.icon"> {{p.title}}</ion-icon>
+        <ion-icon item-start [name]="p.icon"></ion-icon><span>{{p.title}}</span>
       </button>
     </ion-list>
   </ion-content>
