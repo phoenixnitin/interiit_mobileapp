@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import * as jQuery from 'jquery';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -12,8 +11,10 @@ import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
 // import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
+import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Push} from '@ionic-native/push';
 
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
@@ -30,10 +31,10 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    
     // MapsPage,
     ContactUsPage,
-    Youtube
+    Youtube,
+    NotificationPage,
   ],
   imports: [
     BrowserModule,
@@ -52,17 +53,19 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     ResultPage,
     SponsorshipPage,
     // MapsPage,
-    
-    ContactUsPage
+
+    ContactUsPage,
+    NotificationPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     // GoogleMaps,
     Connectivity,
     PhotoViewer
     // GoogleMapsCluster
+    Push,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 
 })
