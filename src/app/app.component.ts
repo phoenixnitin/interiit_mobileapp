@@ -66,7 +66,12 @@ export class MyApp {
             // Background recieval (Even if app is closed),
             //   bring up the message in UI
             console.log('notification tapped');
-            that.nav.push(NotificationPage);
+            if(that.nav.getActive().name !=='NotificationPage')
+              that.nav.push(NotificationPage);
+            else{
+              that.nav.pop(NotificationPage);
+              that.nav.push(NotificationPage);
+            }
           } else {
             // Foreground recieval, update UI or what have you...
             console.log('notification tapped:else');
@@ -120,7 +125,13 @@ export class MyApp {
             {
               text: 'Go to Notifications',
               handler: () => {
-                this.nav.push(NotificationPage);
+                console.log(this.nav.getActive().name);
+                if(this.nav.getActive().name !=='NotificationPage')
+                  this.nav.push(NotificationPage);
+                else{
+                  this.nav.pop(NotificationPage);
+                  this.nav.push(NotificationPage);
+                }
                 console.log('Notification clicked');
               }
             }

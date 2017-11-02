@@ -1,4 +1,4 @@
-import { Component,OnInit} from '@angular/core';
+import { Component,OnInit, OnDestroy} from '@angular/core';
 import { NavController ,AlertController} from 'ionic-angular';
 import {Http} from '@angular/http';
 import { LoadingController } from 'ionic-angular';
@@ -7,7 +7,7 @@ import { LoadingController } from 'ionic-angular';
   selector: 'page-contactus',
   templateUrl: 'contactus.html'
 })
-export class ContactUsPage {
+export class ContactUsPage implements OnDestroy{
   cores: Array<object>;
   coresOffline: Array<object>;
   loading:any;
@@ -58,6 +58,9 @@ export class ContactUsPage {
           private hideLoading(){
             setTimeout(() => {
               this.loading.dismiss();
-            },5000);
+            },);
           }
-        }
+  ngOnDestroy(){
+    this.hideLoading();
+  }
+}

@@ -25,3 +25,9 @@
   background-color: map-get($colors,light);
   -webkit-text-fill-color: map-get($colors,secondary);
 }
+body{
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

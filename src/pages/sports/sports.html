@@ -6,7 +6,7 @@
       <ion-title>Sports</ion-title>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content padding>
     <h3>You are at Sports page</h3>
     <!-- <div class="row" *ngFor="let item of items;let i=index" no-lines>
@@ -20,9 +20,9 @@
                     {{items[i].title}}
                   </ion-card-title>
                 </ion-card-content>
-              </ion-card> 
+              </ion-card>
           </div>
-     
+
           <div class="col col-50" *ngIf="i + 1 < items.length">
             <ion-card class="p">
               <img src="./assests/img/badm.png"/>
@@ -31,10 +31,10 @@
                   {{items[i+1].title}}
                 </ion-card-title>
               </ion-card-content>
-            </ion-card>            
-          </div> 
+            </ion-card>
+          </div>
        </div>
-     
+
        <div class="row">
        <div class="col col-50" *ngIf="i + 2 < items.length">
         <ion-card class="p">
@@ -44,9 +44,9 @@
               {{items[i+2].title}}
             </ion-card-title>
           </ion-card-content>
-        </ion-card>            
+        </ion-card>
          </div>
-     
+
          <div class="col col-50" *ngIf="i + 3 < items.length">
           <ion-card class="p">
             <img src="{{items[i+3].src}}"/>
@@ -55,7 +55,7 @@
                 {{items[i+3].title}}
               </ion-card-title>
             </ion-card-content>
-          </ion-card> 
+          </ion-card>
          </div>
         </div>
      </div>
@@ -65,17 +65,17 @@
       <ion-row *ngIf="i%3==0">
         <ion-col class="p" *ngIf="i<items.length" (click)="itemSelected(items[i])">
                 <img src="{{items[i].src}}" width="100px" height="100px"/>
-                <h6>{{items[i].title}}</h6>          
-        </ion-col>  
+                <!--<h6>{{items[i].title}}</h6>          -->
+        </ion-col>
         <ion-col class="p" *ngIf="i+1<items.length" (click)="itemSelected(items[i+1])">
             <img src="{{items[i+1].src}}" width="100px" height="100px"/>
-            <h6>{{items[i+1].title}}</h6>          
-        </ion-col> 
+            <!--<h6>{{items[i+1].title}}</h6>          -->
+        </ion-col>
         <ion-col class="p" *ngIf="i+2<items.length" (click)="itemSelected(items[i+2])">
             <img src="{{items[i+2].src}}" width="100px" height="100px"/>
-            <h6>{{items[i+2].title}}</h6>          
-        </ion-col>       
+            <!--<h6>{{items[i+2].title}}</h6>          -->
+        </ion-col>
       </ion-row>
-    </div>  
+    </div>
     </ion-grid>
   </ion-content>

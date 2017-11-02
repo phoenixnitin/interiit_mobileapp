@@ -30,7 +30,7 @@ export class NotificationPage {
                   .subscribe(res => {
                     this.notification = res.json().Notification;
                     this.notificationOffline = this.notification;
-                    console.log(this.notification);
+                    // console.log(this.notification);
                     window.localStorage.setItem('notification', JSON.stringify(this.notification));
                     this.hideLoading();
                   }, error => {
