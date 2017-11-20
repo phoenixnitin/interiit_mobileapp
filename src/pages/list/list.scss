@@ -1,6 +1,6 @@
 page-list {
   $num-of-tabs: 3;
-  
+
    @mixin tabs {
      @for $i from 1 through $num-of-tabs {
        &:nth-of-type(#{$i}) {
@@ -16,7 +16,7 @@ page-list {
     border: 0 !important;
     @include tabs;
   }
- 
+
   .slide {
     background: dodgerblue;
     width: calc(100% / #{$num-of-tabs});
@@ -26,5 +26,13 @@ page-list {
     top: calc(100% - 4px);
     transition: left 0.3s ease-out;
   }
-    
+  ion-slide{
+    overflow: scroll;
+    .slide-zoom{
+      height: 100%;
+      iframe{
+        min-width: 380px;
+      }
+    }
+  }
 }

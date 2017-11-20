@@ -1,5 +1,9 @@
 page-gallery {
-    
+    ion-content{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    }
     .img {
         padding-left: 10px;
         padding-right: 10px;
@@ -10,7 +14,7 @@ page-gallery {
         padding-bottom: 56.25%;
         padding-top: 30px; height: 0; overflow: hidden;
         }
-        
+
         .video-container iframe,
         .video-container object,
         .video-container embed {
@@ -59,7 +63,7 @@ page-gallery {
         /*.visibility{*/
             /*visibility: hidden;*/
         /*}*/
-        
+
         .each-image, .each-video{
             max-height: 200px;
             display: inline-table;
@@ -75,5 +79,5 @@ page-gallery {
             text-align: center;
         }
 
-        
+
 }

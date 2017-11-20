@@ -1,22 +1,25 @@
 page-contactus {
-  .item-md{
-    ion-thumbnail{
-      img{
-        width: 80px;
-        height: auto;
-      }
+  ion-content{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    ion-item{
+      background-color: transparent !important;
     }
+  }
+  .item-md, .item-ios{
     p{
       width: max-content;
       line-height: 1.7em;
+      color: white !important;
       b{
         font-size: 18px;
       }
     }
     .input-wrapper{
-      overflow: scroll;
+      //overflow: scroll;
       ion-label{
-        overflow: inherit;
+        //overflow: inherit;
       }
     }
   }

@@ -9,9 +9,6 @@
 
 <ion-content padding>
 <ion-item *ngFor="let core of coresOffline">
-  <ion-thumbnail item-start>
-  <img class="img-thumbnail" src="http://www.drive.google.com/uc?export=view&id={{core.PhotoID}}">
-  </ion-thumbnail>
   <p><b><a href="{{ core.ProfileUrl }}">{{core.Name}}</a></b><br>
     <ion-icon ios="ios-paper" md="ios-paper"></ion-icon>
     {{core.Department}}<br>

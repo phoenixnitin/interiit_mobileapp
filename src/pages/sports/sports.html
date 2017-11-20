@@ -7,73 +7,69 @@
     </ion-navbar>
   </ion-header>
 
-  <ion-content padding>
-    <h3>You are at Sports page</h3>
-    <!-- <div class="row" *ngFor="let item of items;let i=index" no-lines>
-      <div *ngIf="i % 4=== 0">
-         <div class="row">
-            <div class="col col-50" *ngIf="i < items.length">
-              <ion-card class="p">
-                <img src="{{items[i].src}}"/>
-                <ion-card-content>
-                  <ion-card-title>
-                    {{items[i].title}}
-                  </ion-card-title>
-                </ion-card-content>
-              </ion-card>
-          </div>
-
-          <div class="col col-50" *ngIf="i + 1 < items.length">
-            <ion-card class="p">
-              <img src="./assests/img/badm.png"/>
-              <ion-card-content>
-                <ion-card-title>
-                  {{items[i+1].title}}
-                </ion-card-title>
-              </ion-card-content>
-            </ion-card>
-          </div>
-       </div>
-
-       <div class="row">
-       <div class="col col-50" *ngIf="i + 2 < items.length">
-        <ion-card class="p">
-          <img src="{{items[i+2].src}}"/>
-          <ion-card-content>
-            <ion-card-title>
-              {{items[i+2].title}}
-            </ion-card-title>
-          </ion-card-content>
-        </ion-card>
-         </div>
-
-         <div class="col col-50" *ngIf="i + 3 < items.length">
-          <ion-card class="p">
-            <img src="{{items[i+3].src}}"/>
-            <ion-card-content>
-              <ion-card-title>
-                {{items[i+3].title}}
-              </ion-card-title>
-            </ion-card-content>
-          </ion-card>
-         </div>
-        </div>
-     </div>
-    </div> -->
+  <ion-content padding class="box">
     <ion-grid>
-      <div *ngFor="let item of items;let i= index">
-      <ion-row *ngIf="i%3==0">
-        <ion-col class="p" *ngIf="i<items.length" (click)="itemSelected(items[i])">
-                <img src="{{items[i].src}}" width="100px" height="100px"/>
-                <!--<h6>{{items[i].title}}</h6>          -->
+      <div>
+      <ion-row >
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/athletics.png" width="100px" />
+            <h6>Athletics</h6>
         </ion-col>
-        <ion-col class="p" *ngIf="i+1<items.length" (click)="itemSelected(items[i+1])">
-            <img src="{{items[i+1].src}}" width="100px" height="100px"/>
-            <!--<h6>{{items[i+1].title}}</h6>          -->
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/badm.png" width="100px" />
+            <h6>Badminton</h6>
         </ion-col>
-        <ion-col class="p" *ngIf="i+2<items.length" (click)="itemSelected(items[i+2])">
-            <img src="{{items[i+2].src}}" width="100px" height="100px"/>
-            <!--<h6>{{items[i+2].title}}</h6>          -->
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/bask.png" width="100px" />
+            <h6>Basketball</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/cri.png" width="100px" />
+            <h6>Cricket</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/foot.png" width="100px" />
+            <h6>Football</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/hock.png" width="100px" />
+            <h6>Hockey</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/squa.png" width="100px" />
+            <h6>Squash</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/tt.png" width="100px" />
+            <h6>Table Tennis</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/tenn.png" width="100px" />
+            <h6>Tennis</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/volley.png" width="100px" />
+            <h6>Volleyball</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/weight.png" width="100px" />
+            <h6>Weightlifting</h6>
+        </ion-col>
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/waterpolo.png" width="100px" />
+            <h6>Waterpolo</h6>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col class="p" (click)="itemSelected(this)">
+            <img src="./assets/img/swim.png" width="100px" />
+            <h6>Swimming</h6>
         </ion-col>
       </ion-row>
     </div>

@@ -80,6 +80,7 @@
     </platform>
     <engine name="android" spec="^6.2.3" />
     <plugin name="com-sarriaroman-photoviewer" spec="^1.1.10" />
+    <plugin name="cordova-plugin-backbutton" spec="^0.3.0" />
     <plugin name="cordova-plugin-console" spec="1.0.5" />
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />

@@ -23,10 +23,14 @@ export class MyApp {
   rootPage: any = HomePage;
   activePage: any;
   pages: Array<{title: string, component: any, icon:string}>;
+  private resetBackButton: any;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public push: Push, public alertCtrl: AlertController) {
     this.initializeApp();
-
+    // if(this.nav.length() == 1){
+    //
+    // }
+    // this.platform.registerBackButtonAction(this.exit);
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage ,icon:'home'},
@@ -51,7 +55,6 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.pushsetup();
-
        if(typeof(FCMPlugin) !== "undefined"){
         FCMPlugin.getToken(function(t){
           console.log("Use this token for sending device specific messages\nToken: " + t);
@@ -146,6 +149,32 @@ export class MyApp {
     });
 
     pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+  }
+  exitApp(){
+    console.log(this.nav.length());
+    let that = this;
+    console.log("exit alert");
+    let alert = this.alertCtrl.create({
+          title: 'Exit',
+          message: 'Do you want to exit?',
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            },
+            {
+              text: 'Exit',
+              handler: () => {
+                console.log('Exit clicked');
+                that.platform.exitApp();
+              }
+            }
+          ]
+        });
+    alert.present();
   }
 }
 
