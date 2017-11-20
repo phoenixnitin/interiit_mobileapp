@@ -1,5 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { NavController, NavParams ,Slides} from 'ionic-angular';
+import * as jQuery from 'jquery';
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
@@ -10,13 +11,13 @@ export class ListPage {
   // items: Array<{title: string, note: string, icon: string}>;
   @ViewChild('pageSlider') pageSlider: Slides;
   tabs: any = '0';
-  
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-    
-    
+
+
     // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     // 'american-football', 'boat', 'bluetooth', 'build'];
@@ -31,10 +32,12 @@ export class ListPage {
     // }
   }
   ionViewDidLoad() {
-    
+
   }
-  selectTab(index) {
+  selectTab(index, event) {
     this.pageSlider.slideTo(index);
+    jQuery('body > ion-app > ng-component > ion-nav > page-list > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
+    event.target.classList.add('active');
   }
   changeWillSlide($event) {
     this.tabs = $event._snapIndex.toString();

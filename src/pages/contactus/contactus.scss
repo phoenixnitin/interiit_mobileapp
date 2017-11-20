@@ -14,7 +14,13 @@ page-contactus {
       color: white !important;
       b{
         font-size: 18px;
+        a{
+          color: #ffdd00;
+        }
       }
+      a:not(:first-child){
+          color: #00d3ff;
+        }
     }
     .input-wrapper{
       //overflow: scroll;

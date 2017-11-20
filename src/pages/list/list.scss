@@ -1,6 +1,27 @@
 page-list {
   $num-of-tabs: 3;
-
+  ion-toolbar{
+    width: fit-content;
+    display: inline-flex;
+    overflow-x: scroll;
+    .toolbar-content{
+      overflow-x: scroll;
+    }
+    ion-segment{
+      width: fit-content;
+      min-width: 100%;
+      ion-segment-button{
+        text-overflow: unset !important;
+        width: fit-content !important;
+        margin: 0 5px !important;
+        border-radius: 4px;
+      }
+    }
+  }
+  ion-segment-button.active{
+    background-color: #222222 !important;
+    color: white !important;
+  }
    @mixin tabs {
      @for $i from 1 through $num-of-tabs {
        &:nth-of-type(#{$i}) {
