@@ -9,9 +9,9 @@
      <ion-segment-button *ngFor="let item of waterpolo; let i = index" (click)="selectTab(i , $event)"
                           value="{{i}}" [ngClass]="{ 'active': i == 0 }">{{item.title}}
      </ion-segment-button>
-     <!--<ion-segment-button (click)="selectTab(0, $event)" class="active"-->
-                          <!--value="0">Tab1-->
-   <!--</ion-segment-button>-->
+     <ion-segment-button class="offlinecontent hide" (click)="selectTab(0, $event)"
+                          value="0">Offline
+     </ion-segment-button>
 <!--<ion-segment-button (click)="selectTab(1, $event)"-->
                    <!--value="1">Tab2-->
 <!--</ion-segment-button>-->
@@ -30,7 +30,7 @@
    <ion-content>
     <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
       <ion-slide *ngFor="let item of waterpolo;">
-        <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px" onload=""></iframe>
+        <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px"></iframe>
       </ion-slide>
       <!--<ion-slide>-->
         <!--<h1>ContentTab 2</h1>-->
@@ -42,4 +42,6 @@
         <!--<h1>ContentTab 4</h1>-->
       <!--</ion-slide>-->
     </ion-slides>
+     <h1 class="offlinecontent hide">You seem to be offline. Please connect to internet and try again.</h1>
    </ion-content>
+

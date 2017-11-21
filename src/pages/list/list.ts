@@ -20,20 +20,11 @@ export class ListPage {
   constructor(private _http: Http, public navCtrl: NavController, public loadingCtrl: LoadingController, public navParams: NavParams, public sanitizer: DomSanitizer) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-    this.loading = this.loadingCtrl.create({
-              content: 'Please wait..',
-              spinner: 'crescent'
-            });
-    this.loading.present(this.loading);
-    this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Waterpolo')
-                .subscribe(res => {
-                  this.waterpolo = res.json().Waterpolo;
-                  console.log(this.waterpolo);
-                  this.hideLoading();
-                }, error => {
-                  console.log('error occured.');
-                  this.hideLoading();
-                });
+    // this.loading = this.loadingCtrl.create({
+    //           content: 'Please wait..',
+    //           spinner: 'crescent'
+    //         });
+    // this.loading.present(this.loading);
     // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     // 'american-football', 'boat', 'bluetooth', 'build'];
@@ -65,11 +56,11 @@ export class ListPage {
   //     item: item
   //   });
   // }
-  hideLoading(){
-            setTimeout(() => {
-              this.loading.dismiss();
-            },);
-          }
+  // hideLoading(){
+  //           setTimeout(() => {
+  //             this.loading.dismiss();
+  //           },);
+  //         }
   activeadd(i, event){
     if(i==0){
       event.target.classList.add('active');

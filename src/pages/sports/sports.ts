@@ -35,18 +35,24 @@ export class SportsPage {
   }
 itemSelected(item){
     console.log(item);
-    if(item === 'Athletics'){this.navCtrl.push(SportAthletics);}
-    else if (item === 'Badminton'){this.navCtrl.push(SportBadminton);}
-    else if (item === 'Basketball'){this.navCtrl.push(SportBasketball);}
-    else if (item === 'Cricket'){this.navCtrl.push(SportCricket);}
-    else if (item === 'Football'){this.navCtrl.push(SportFootball);}
-    else if (item === 'Hockey'){this.navCtrl.push(SportHockey);}
-    else if (item === 'Squash'){this.navCtrl.push(SportSquash);}
-    else if (item === 'Swimming'){this.navCtrl.push(SportSwimming);}
-    else if (item === 'Tennis'){this.navCtrl.push(SportTennis);}
-    else if (item === 'TableTennis'){this.navCtrl.push(SportTableTennis);}
-    else if (item === 'Volleyball'){this.navCtrl.push(SportVolleyball);}
-    else if (item === 'Waterpolo'){this.navCtrl.push(SportWaterpolo);}
-    else if (item === 'Weightlifting'){this.navCtrl.push(SportWeightlifting);}
+    if(navigator.onLine == true){
+      if(item === 'Athletics'){this.navCtrl.push(SportAthletics);}
+      else if (item === 'Badminton'){this.navCtrl.push(SportBadminton);}
+      else if (item === 'Basketball'){this.navCtrl.push(SportBasketball);}
+      else if (item === 'Cricket'){this.navCtrl.push(SportCricket);}
+      else if (item === 'Football'){this.navCtrl.push(SportFootball);}
+      else if (item === 'Hockey'){this.navCtrl.push(SportHockey);}
+      else if (item === 'Squash'){this.navCtrl.push(SportSquash);}
+      else if (item === 'Swimming'){this.navCtrl.push(SportSwimming);}
+      else if (item === 'Tennis'){this.navCtrl.push(SportTennis);}
+      else if (item === 'TableTennis'){this.navCtrl.push(SportTableTennis);}
+      else if (item === 'Volleyball'){this.navCtrl.push(SportVolleyball);}
+      else if (item === 'Waterpolo'){this.navCtrl.push(SportWaterpolo);}
+      else if (item === 'Weightlifting'){this.navCtrl.push(SportWeightlifting);}
+
+    }
+  else{
+      this.navCtrl.push(ListPage);
+    }
 }
 }
