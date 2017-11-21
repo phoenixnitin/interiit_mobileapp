@@ -1,6 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {ListPage} from '../list/list';
+import {SportAthletics} from '../sports/allpages/Athletics/athletics';
+import {SportBadminton} from '../sports/allpages/Badminton/badminton';
+import {SportBasketball} from '../sports/allpages/Basketball/basketball';
+import {SportCricket} from '../sports/allpages/Cricket/cricket';
+import {SportFootball} from '../sports/allpages/Football/football';
+import {SportHockey} from '../sports/allpages/Hockey/hockey';
+import {SportSquash} from '../sports/allpages/Squash/squash';
+import {SportSwimming} from '../sports/allpages/Swimming/swimming';
+import {SportTableTennis} from '../sports/allpages/Table Tennis/tabletennis';
+import {SportTennis} from '../sports/allpages/Tennis/tennis';
+import {SportVolleyball} from '../sports/allpages/Volleyball/volleyball';
+import {SportWaterpolo} from '../sports/allpages/Waterpolo/waterpolo';
+import {SportWeightlifting} from '../sports/allpages/Weightlifting/weightlifting';
 @Component({
   selector: 'page-sports',
   templateUrl: 'sports.html'
@@ -22,8 +35,18 @@ export class SportsPage {
   }
 itemSelected(item){
     console.log(item);
-  this.navCtrl.push(ListPage, {
-    item: item
-  });
+    if(item === 'Athletics'){this.navCtrl.push(SportAthletics);}
+    else if (item === 'Badminton'){this.navCtrl.push(SportBadminton);}
+    else if (item === 'Basketball'){this.navCtrl.push(SportBasketball);}
+    else if (item === 'Cricket'){this.navCtrl.push(SportCricket);}
+    else if (item === 'Football'){this.navCtrl.push(SportFootball);}
+    else if (item === 'Hockey'){this.navCtrl.push(SportHockey);}
+    else if (item === 'Squash'){this.navCtrl.push(SportSquash);}
+    else if (item === 'Swimming'){this.navCtrl.push(SportSwimming);}
+    else if (item === 'Tennis'){this.navCtrl.push(SportTennis);}
+    else if (item === 'TableTennis'){this.navCtrl.push(SportTableTennis);}
+    else if (item === 'Volleyball'){this.navCtrl.push(SportVolleyball);}
+    else if (item === 'Waterpolo'){this.navCtrl.push(SportWaterpolo);}
+    else if (item === 'Weightlifting'){this.navCtrl.push(SportWeightlifting);}
 }
 }

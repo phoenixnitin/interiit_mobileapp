@@ -1,7 +1,6 @@
 import { Component,OnInit, OnDestroy} from '@angular/core';
-import { NavController ,AlertController} from 'ionic-angular';
+import { NavController ,AlertController, LoadingController} from 'ionic-angular';
 import {Http} from '@angular/http';
-import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'page-contactus',

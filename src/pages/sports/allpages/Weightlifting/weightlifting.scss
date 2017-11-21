@@ -1,0 +1,59 @@
+sport-weightlifting{
+    $num-of-tabs: 3;
+  ion-toolbar{
+    width: fit-content;
+    display: inline-flex;
+    overflow-x: scroll;
+    .toolbar-content{
+      overflow-x: scroll;
+    }
+    ion-segment{
+      width: fit-content;
+      min-width: 100%;
+      ion-segment-button{
+        text-overflow: unset !important;
+        width: fit-content !important;
+        margin: 0 5px !important;
+        border-radius: 4px;
+      }
+    }
+  }
+  ion-segment-button.active{
+    background-color: #222222 !important;
+    color: white !important;
+  }
+   @mixin tabs {
+     @for $i from 1 through $num-of-tabs {
+       &:nth-of-type(#{$i}) {
+         &.segment-activated {
+           ~ .slide {
+             left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+           }
+         }
+       }
+     }
+   }
+   .segment-button {
+    border: 0 !important;
+    @include tabs;
+  }
+
+  .slide {
+    background: dodgerblue;
+    width: calc(100% / #{$num-of-tabs});
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 4px);
+    transition: left 0.3s ease-out;
+  }
+  ion-slide{
+    overflow: scroll;
+    .slide-zoom{
+      height: 100%;
+      iframe{
+        min-width: 380px;
+      }
+    }
+  }
+}

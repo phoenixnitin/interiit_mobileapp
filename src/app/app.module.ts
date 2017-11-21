@@ -9,6 +9,20 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
+import {SportAthletics} from '../pages/sports/allpages/Athletics/athletics';
+import {SportBadminton} from '../pages/sports/allpages/Badminton/badminton';
+import {SportBasketball} from '../pages/sports/allpages/Basketball/basketball';
+import {SportCricket} from '../pages/sports/allpages/Cricket/cricket';
+import {SportFootball} from '../pages/sports/allpages/Football/football';
+import {SportHockey} from '../pages/sports/allpages/Hockey/hockey';
+import {SportSquash} from '../pages/sports/allpages/Squash/squash';
+import {SportSwimming} from '../pages/sports/allpages/Swimming/swimming';
+import {SportTableTennis} from '../pages/sports/allpages/Table Tennis/tabletennis';
+import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
+import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
+import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
+import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
+
 // import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -35,6 +49,19 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     ContactUsPage,
     Youtube,
     NotificationPage,
+    SportAthletics,
+    SportBadminton,
+    SportBasketball,
+    SportCricket,
+    SportFootball,
+    SportHockey,
+    SportSquash,
+    SportSwimming,
+    SportTableTennis,
+    SportTennis,
+    SportVolleyball,
+    SportWaterpolo,
+    SportWeightlifting,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +83,19 @@ import { Connectivity } from '../providers/connectivity/connectivity';
 
     ContactUsPage,
     NotificationPage,
+    SportAthletics,
+    SportBadminton,
+    SportBasketball,
+    SportCricket,
+    SportFootball,
+    SportHockey,
+    SportSquash,
+    SportSwimming,
+    SportTableTennis,
+    SportTennis,
+    SportVolleyball,
+    SportWaterpolo,
+    SportWeightlifting,
   ],
   providers: [
     StatusBar,

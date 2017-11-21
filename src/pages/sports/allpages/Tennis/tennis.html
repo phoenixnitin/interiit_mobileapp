@@ -1,12 +1,12 @@
 <ion-header>
     <ion-navbar no-border-bottom>
- <ion-title>Waterpolo</ion-title>
+ <ion-title>Tennis</ion-title>
     </ion-navbar>
    <!-- </ion-header> -->
    <ion-toolbar no-border-top>
    <ion-segment color="secondary" [(ngModel)]="tabs">
 
-     <ion-segment-button *ngFor="let item of waterpolo; let i = index" (click)="selectTab(i , $event)"
+     <ion-segment-button *ngFor="let item of tennis; let i = index" (click)="selectTab(i , $event)"
                           value="{{i}}" [ngClass]="{ 'active': i == 0 }">{{item.title}}
      </ion-segment-button>
      <!--<ion-segment-button (click)="selectTab(0, $event)" class="active"-->
@@ -29,7 +29,7 @@
 </ion-header>
    <ion-content>
     <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
-      <ion-slide *ngFor="let item of waterpolo;">
+      <ion-slide *ngFor="let item of tennis;">
         <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px" onload=""></iframe>
       </ion-slide>
       <!--<ion-slide>-->

@@ -4,10 +4,10 @@ import {Http} from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as jQuery from 'jquery';
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'sport-waterpolo',
+  templateUrl: 'waterpolo.html'
 })
-export class ListPage {
+export class SportWaterpolo {
   selectedItem: any;
   waterpolo: Array<object>;
   loading:any;
@@ -52,7 +52,7 @@ export class ListPage {
   }
   selectTab(index, event) {
     this.pageSlider.slideTo(index);
-    jQuery('body > ion-app > ng-component > ion-nav > page-list > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
+    jQuery('body > ion-app > ng-component > ion-nav > sport-waterpolo > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
   }
   changeWillSlide($event) {

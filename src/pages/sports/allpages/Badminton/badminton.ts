@@ -4,12 +4,12 @@ import {Http} from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as jQuery from 'jquery';
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'sport-badminton',
+  templateUrl: 'badminton.html'
 })
-export class ListPage {
+export class SportBadminton {
   selectedItem: any;
-  waterpolo: Array<object>;
+  badminton: Array<object>;
   loading:any;
   // icons: string[];
   // items: Array<{title: string, note: string, icon: string}>;
@@ -25,10 +25,10 @@ export class ListPage {
               spinner: 'crescent'
             });
     this.loading.present(this.loading);
-    this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Waterpolo')
+    this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Badminton')
                 .subscribe(res => {
-                  this.waterpolo = res.json().Waterpolo;
-                  console.log(this.waterpolo);
+                  this.badminton = res.json().Badminton;
+                  console.log(this.badminton);
                   this.hideLoading();
                 }, error => {
                   console.log('error occured.');
@@ -52,7 +52,7 @@ export class ListPage {
   }
   selectTab(index, event) {
     this.pageSlider.slideTo(index);
-    jQuery('body > ion-app > ng-component > ion-nav > page-list > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
+    jQuery('body > ion-app > ng-component > ion-nav > sport-badminton > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
   }
   changeWillSlide($event) {
