@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import {LivePage} from '../pages/live/live';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
@@ -22,7 +23,7 @@ import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
 import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
-
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 // import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -41,6 +42,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     MyApp,
     HomePage,
     ListPage,
+    LivePage,
     GalleryPage,
     SportsPage,
     ResultPage,
@@ -75,6 +77,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     MyApp,
     HomePage,
     ListPage,
+    LivePage,
     GalleryPage,
     SportsPage,
     ResultPage,
@@ -103,6 +106,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     // GoogleMaps,
     Connectivity,
     PhotoViewer,
+    YoutubeVideoPlayer,
     // GoogleMapsCluster
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
