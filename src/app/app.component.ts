@@ -8,6 +8,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
+import {LivePage}from'../pages/live/live';
 //import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -36,9 +37,9 @@ export class MyApp {
       { title: 'Home', component: HomePage ,icon:'home'},
       // { title: 'List', component: ListPage ,icon:'home'},
       { title: 'Gallery', component: GalleryPage ,icon:'photos' },
-      { title: 'Sports', component: SportsPage ,icon:'home' },
+      { title: 'Sports', component: SportsPage ,icon:'american-football' },
       // { title: 'Results', component: ResultPage ,icon:'home' },
-      // { title: 'Sponsorship', component: SponsorshipPage ,icon:'home' },
+      { title: 'Live', component:LivePage ,icon:'logo-youtube' },
       // { title: 'Maps', component: MapsPage ,icon:'home'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
@@ -101,7 +102,7 @@ export class MyApp {
   pushsetup() {
     const options: PushOptions = {
        android: {
-           senderID: '255556131441'
+           //senderID: '255556131441'
        },
        ios: {
            alert: 'true',
