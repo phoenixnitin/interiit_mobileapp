@@ -16,7 +16,7 @@
     </div>
     <div class="iframe-object">
       <iframe  type="text/html" [attr.id]="d.SportName"
-      src="http://www.youtube.com/embed/5lbLSfEdBeI?enablejsapi=1"
+      [src]="sanitizer.bypassSecurityTrustResourceUrl(d.embedURL)"
       frameborder="0" allowfullscreen></iframe>
     </div>
     <div id="participant">
@@ -28,7 +28,7 @@
   <div id="livecontainer-alt" [ngClass]="{'hide': d.Status=='online'|| (d.Status=='offline')&&(d.showText=='on')}">
       <h2 >Live stream for {{d.SportName}} is not available now. Please check back soon.</h2>
   </div>
-  
+
   </div>
 </ion-card>
 </div>
@@ -38,8 +38,8 @@
   </ion-card-content>
 </ion-card>
 </ion-content>
-  
-  
+
+
 
 
 

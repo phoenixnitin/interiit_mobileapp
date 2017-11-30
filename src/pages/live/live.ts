@@ -13,14 +13,17 @@ declare global {
     selector: 'page-live',
     templateUrl:'live.html',
 })
-export class LivePage implements OnInit{ 
+export class LivePage implements OnInit, OnDestroy{
     data: Array<object>;
+    dataNew: Array<object>;
     loading:any;
     ngOnInit(){
       this.loadlive();
     };
-    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public NavCtrl: LoadingController,private youtube: YoutubeVideoPlayer){ 
+    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public NavCtrl: LoadingController,private youtube: YoutubeVideoPlayer){
+
     }
+
   loadlive(){
   if(navigator.onLine==true){
     var $ =jQuery;
@@ -42,7 +45,7 @@ this.func();
   }
  }
    func(){
-    var $ =jQuery;  
+    var $ =jQuery;
     $(document).ready(function(){
     if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined'){
     var tag = document.createElement('script');
@@ -67,14 +70,14 @@ this.func();
       videoId:'',
       events: {
         'onReady': function(event){
-            console.log("enter")
-            event.target.playVideo;
+            console.log("enter");
+            event.target.playVideo();
         },
         'onStateChange':function(status){
           if (status.data == YT.PlayerState.PLAYING) {
             $.each(players, function(k, v) {
-                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) { 
-                    this.stopVideo();
+                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) {
+                    this.pauseVideo();
                 }
             });
         }
@@ -82,11 +85,11 @@ this.func();
       }
     }));
   });
-    console.log('youtube iframe api ready!'); 
+    console.log('youtube iframe api ready!');
     }
 })
-}  
- 
+}
+
     hideLoading(){
       setTimeout(() => {
         this.loading.dismiss();
@@ -94,7 +97,10 @@ this.func();
     }
     // ngOnDestroy(){
     //   this.hideLoading();
-    // } 
+    // }
     offline(){
     }
+    ngOnDestroy(){
+    this.hideLoading();
+  }
  }

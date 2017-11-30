@@ -3,7 +3,7 @@ page-live{
         background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
         background-size: cover;
         background-position: center;
-    
+
       }
       ion-card {
         position: relative;
@@ -20,10 +20,10 @@ page-live{
 
     #livecontainer-alt{
         position: relative;
-        text-align: center; 
+        text-align: center;
         padding-top: 70px;
     }
-    .iframe-object{ 
+    .iframe-object{
         position: relative;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -34,4 +34,7 @@ page-live{
         opacity: 0.8;
         text-decoration-color: black;
     }
+  iframe{
+    width: inherit;
+  }
 }
