@@ -13,15 +13,38 @@ declare global {
     selector: 'page-live',
     templateUrl:'live.html',
 })
-export class LivePage implements OnInit{
+export class LivePage implements OnInit{ 
     data: Array<object>;
     loading:any;
     ngOnInit(){
       this.loadlive();
     };
-    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,private youtube: YoutubeVideoPlayer){ 
+    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public NavCtrl: LoadingController,private youtube: YoutubeVideoPlayer){ 
     }
   loadlive(){
+  if(navigator.onLine==true){
+    var $ =jQuery;
+    $("#offline").hide();
+  this.loading = this.loadingCtrl.create({
+  content: 'Please wait..',
+     spinner: 'crescent'
+ });
+this.loading.present(this.loading);
+this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
+.subscribe(res => {
+ this.data = res.json().livedata;
+this.hideLoading();
+this.func();
+});
+  }
+  else{
+    this.offline();
+  }
+ }
+   func(){
+    var $ =jQuery;  
+    $(document).ready(function(){
+    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined'){
     var tag = document.createElement('script');
     tag.src = "http://www.youtube.com/iframe_api";
     tag.id = "iframe_api";
@@ -29,10 +52,17 @@ export class LivePage implements OnInit{
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     console.log('API loaded');
     window.onYouTubeIframeAPIReady = function () {
+      console.log("check");
+     runPlayer();
+  }
+    }
+    else{
+    runPlayer();}
+    function runPlayer(){
+      console.log("enet");
       var players = [];
-      var $ =jQuery;  
-      $('iframe').each( function (k, v) {
-        if (!this.id) { this.id='embeddedvideoiframe' + k }
+      $('iframe').each( function (k,v) {
+        console.log(this.id);
       players.push(new YT.Player(this.id, {
       videoId:'',
       events: {
@@ -41,7 +71,6 @@ export class LivePage implements OnInit{
             event.target.playVideo;
         },
         'onStateChange':function(status){
-          console.log("hi");
           if (status.data == YT.PlayerState.PLAYING) {
             $.each(players, function(k, v) {
                 if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) { 
@@ -55,26 +84,17 @@ export class LivePage implements OnInit{
   });
     console.log('youtube iframe api ready!'); 
     }
-
-  this.loading = this.loadingCtrl.create({
-  content: 'Please wait..',
-     spinner: 'crescent'
- });
-this.loading.present(this.loading);
-this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
-.subscribe(res => {
- this.data = res.json().livedata;
-this.hideLoading();
-});
-
- }
+})
+}  
  
-    private hideLoading(){
+    hideLoading(){
       setTimeout(() => {
         this.loading.dismiss();
       },);
     }
-    ngOnDestroy(){
-      this.hideLoading();
-    } 
+    // ngOnDestroy(){
+    //   this.hideLoading();
+    // } 
+    offline(){
+    }
  }

@@ -7,16 +7,18 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-<!-- <div *ngFor = "let d of data;let i = index">
+<div *ngFor = "let d of data;let i = index">
 <ion-card>
 <div class="container" >
   <div id="livecontainer" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
     <div id="title">
       <h2>{{d.SportName}}</h2>
     </div>
-      <iframe  type="text/html" 
-      src="http://www.youtube.com/embed/gbug3zTm3Ws?enablejsapi=1"
+    <div class="iframe-object">
+      <iframe  type="text/html" [attr.id]="d.SportName"
+      src="http://www.youtube.com/embed/5lbLSfEdBeI?enablejsapi=1"
       frameborder="0" allowfullscreen></iframe>
+    </div>
     <div id="participant">
       <h2>{{d.Participant}}</h2>
     </div>
@@ -29,23 +31,12 @@
   
   </div>
 </ion-card>
-</div> -->
-<ion-card>
-<iframe  type="text/html" 
-src="http://www.youtube.com/embed/gbug3zTm3Ws?enablejsapi=1"
-frameborder="0" allowfullscreen></iframe>
+</div>
+<ion-card id ="offline">
+  <ion-card-content>
+    <p>Wait a minute. Wait a minute, Doc. Uhhh... You might be offline</p>
+  </ion-card-content>
 </ion-card>
-<ion-card>
-<iframe  type="text/html" 
-src="http://www.youtube.com/embed/gbug3zTm3Ws?enablejsapi=1"
-frameborder="0" allowfullscreen></iframe>
-</ion-card>
-<ion-card>
-<iframe  type="text/html" 
-src="http://www.youtube.com/embed/gbug3zTm3Ws?enablejsapi=1"
-frameborder="0" allowfullscreen></iframe>
-</ion-card>
-
 </ion-content>
   
   
