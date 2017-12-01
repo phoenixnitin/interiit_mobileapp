@@ -10,16 +10,16 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
-// import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
-// import { GoogleMaps } from '../providers/google-maps/google-maps';
-// import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
+//import { GoogleMaps } from '@ionic-native/google-maps';
+import { GoogleMaps } from '../providers/google-maps/google-maps';
+import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
 import { Connectivity } from '../providers/connectivity/connectivity';
 @NgModule({
   declarations: [
@@ -30,8 +30,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    
-    // MapsPage,
+    MapsPage,
     ContactUsPage,
     Youtube
   ],
@@ -51,7 +50,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
     
     ContactUsPage
   ],
@@ -59,10 +58,10 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    // GoogleMaps,
+    GoogleMaps,
     Connectivity,
-    PhotoViewer
-    // GoogleMapsCluster
+    PhotoViewer,
+    GoogleMapsCluster
   ]
 
 })

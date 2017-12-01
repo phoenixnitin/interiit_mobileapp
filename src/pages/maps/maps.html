@@ -1,5 +1,28 @@
 <ion-header>
-    <ion-navbar color="danger">
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Maps</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+ 
+   <div #pleaseConnect id="please-connect">
+    <p>Please connect to the Internet...</p>
+  </div>
+
+  <div #map id="map"></div>
+
+</ion-content>
+
+<!--Name  Creation date   Restrictions  Key   
+API key 2   Oct 19, 2017  None  AIzaSyCR6ltDCdQ9Duf70VNRTDrapN_u0v3UWKU   
+API key 1   Oct 19, 2017  None  AIzaSyDBRGF3IyOcaVZL6wg0tfBd0DMja4SEtZw   
+
+<ion-header>
+    <ion-navbar color="secondary">
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -11,10 +34,12 @@
  
 <ion-content>
  
-    <div #pleaseConnect id="please-connect">
+   <div #pleaseConnect>
         <p>Please connect to the Internet...</p>
     </div>
  
-    <div #map id="map"></div>
+    <div #map></div>
  
 </ion-content>
+
+-->
