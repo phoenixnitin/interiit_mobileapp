@@ -30,12 +30,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push} from '@ionic-native/push';
 
-import { IonicImageViewerModule } from 'ionic-img-viewer';
+//import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
 // import { GoogleMaps } from '../providers/google-maps/google-maps';
 // import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
 import { Connectivity } from '../providers/connectivity/connectivity';
+import { VideoPlayer } from '@ionic-native/video-player';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -67,7 +70,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {navExitApp: false}),
-    IonicImageViewerModule,
+    //IonicImageViewerModule,
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -103,6 +106,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
     // GoogleMaps,
     Connectivity,
     PhotoViewer,
+    VideoPlayer,
     // GoogleMapsCluster
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
