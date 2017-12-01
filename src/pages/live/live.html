@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Live</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div *ngFor = "let d of data;let i = index">
+<ion-card>
+<div class="container" >
+  <div id="livecontainer" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
+    <div id="title">
+      <h2>{{d.SportName}}</h2>
+    </div>
+    <div class="iframe-object">
+      <iframe  type="text/html" [attr.id]="d.SportName"
+      [src]="sanitizer.bypassSecurityTrustResourceUrl(d.embedURL)"
+      frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="participant">
+      <h2>{{d.Participant}}</h2>
+    </div>
+    <div id="score"><h2>{{d.Score}}</h2></div>
+    <div id="description"><h3>{{d.Description}}</h3></div>
+  </div>
+  <div id="livecontainer-alt" [ngClass]="{'hide': d.Status=='online'|| (d.Status=='offline')&&(d.showText=='on')}">
+      <h2 >Live stream for {{d.SportName}} is not available now. Please check back soon.</h2>
+  </div>
+
+  </div>
+</ion-card>
+</div>
+<ion-card id ="offline">
+  <ion-card-content>
+    <p>Wait a minute. Wait a minute, Doc. Uhhh... You might be offline</p>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,40 @@
+page-live{
+    ion-content{
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+        background-size: cover;
+        background-position: center;
+
+      }
+      ion-card {
+        position: relative;
+        text-align: center;
+        width:500px;
+        height:300px;
+    }
+    #title{
+        position: relative;
+        text-align: center;
+        font-size: 60px;
+        padding-top: 20px;
+    }
+
+    #livecontainer-alt{
+        position: relative;
+        text-align: center;
+        padding-top: 70px;
+    }
+    .iframe-object{
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 100%;
+        height: 100%;
+    }
+    #offline{
+        opacity: 0.8;
+        text-decoration-color: black;
+    }
+  iframe{
+    width: inherit;
+  }
+}

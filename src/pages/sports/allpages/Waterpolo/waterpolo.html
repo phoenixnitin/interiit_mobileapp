@@ -30,7 +30,7 @@
    <ion-content>
     <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
       <ion-slide *ngFor="let item of waterpolo;">
-        <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px"></iframe>
+        <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px" (abort)="checkOffline()" (error)="checkOffline()"></iframe>
       </ion-slide>
       <!--<ion-slide>-->
         <!--<h1>ContentTab 2</h1>-->
