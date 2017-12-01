@@ -33,6 +33,7 @@ export class SportSwimming {
                 }, error => {
                   console.log('error occured.');
                   this.hideLoading();
+                  this.checkOffline();
                 });
     // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
@@ -52,8 +53,21 @@ export class SportSwimming {
   }
   selectTab(index, event) {
     this.pageSlider.slideTo(index);
+    this.checkOffline();
     jQuery('body > ion-app > ng-component > ion-nav > sport-swimming > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
+  }
+  checkOffline(){
+    if(navigator.onLine == false){
+      jQuery('body > ion-app > ng-component > ion-nav > sport-swimming > ion-content > div.scroll-content > ion-slides').hide();
+      jQuery('body > ion-app > ng-component > ion-nav > sport-swimming > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().addClass('hide');
+      jQuery('.offlinecontent').removeClass('hide');
+    }
+    else{
+      jQuery('body > ion-app > ng-component > ion-nav > sport-swimming > ion-content > div.scroll-content > ion-slides').show();
+      jQuery('body > ion-app > ng-component > ion-nav > sport-swimming > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('hide');
+      jQuery('.offlinecontent').addClass('hide active');
+    }
   }
   changeWillSlide($event) {
     this.tabs = $event._snapIndex.toString();

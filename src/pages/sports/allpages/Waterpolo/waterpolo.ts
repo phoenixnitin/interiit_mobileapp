@@ -66,7 +66,7 @@ export class SportWaterpolo {
     else{
       jQuery('body > ion-app > ng-component > ion-nav > sport-waterpolo > ion-content > div.scroll-content > ion-slides').show();
       jQuery('body > ion-app > ng-component > ion-nav > sport-waterpolo > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('hide');
-      jQuery('.offlinecontent').addClass('hide');
+      jQuery('.offlinecontent').addClass('hide active');
     }
   }
   changeWillSlide($event) {
