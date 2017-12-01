@@ -13,17 +13,14 @@ declare global {
     selector: 'page-live',
     templateUrl:'live.html',
 })
-export class LivePage implements OnInit, OnDestroy{
+export class LivePage implements OnInit{ 
     data: Array<object>;
-    dataNew: Array<object>;
     loading:any;
     ngOnInit(){
       this.loadlive();
     };
-    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public NavCtrl: LoadingController,private youtube: YoutubeVideoPlayer){
-
+    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer){ 
     }
-
   loadlive(){
   if(navigator.onLine==true){
     var $ =jQuery;
@@ -31,21 +28,21 @@ export class LivePage implements OnInit, OnDestroy{
   this.loading = this.loadingCtrl.create({
   content: 'Please wait..',
      spinner: 'crescent'
+     
  });
 this.loading.present(this.loading);
 this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
 .subscribe(res => {
  this.data = res.json().livedata;
 this.hideLoading();
-this.func();
+func();
 });
   }
   else{
     this.offline();
   }
- }
-   func(){
-    var $ =jQuery;
+   function func(){
+    var $ =jQuery; 
     $(document).ready(function(){
     if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined'){
     var tag = document.createElement('script');
@@ -57,50 +54,46 @@ this.func();
     window.onYouTubeIframeAPIReady = function () {
       console.log("check");
      runPlayer();
-  }
     }
-    else{
-    runPlayer();}
+  }else{
+    runPlayer();
+  }
     function runPlayer(){
       console.log("enet");
       var players = [];
-      $('iframe').each( function (k,v) {
+      $('iframe').filter(function(){return this.src.indexOf('https://www.youtube.com/') == 0}).each( function (k, v) {
         console.log(this.id);
       players.push(new YT.Player(this.id, {
       videoId:'',
       events: {
         'onReady': function(event){
-            console.log("enter");
-            event.target.playVideo();
+            console.log("enter")
+            event.target.playVideo;
         },
         'onStateChange':function(status){
           if (status.data == YT.PlayerState.PLAYING) {
             $.each(players, function(k, v) {
-                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) {
-                    this.pauseVideo();
+                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) { 
+                    this.stopVideo();
                 }
             });
         }
         }
       }
     }));
-  });
-    console.log('youtube iframe api ready!');
+  });        
+    console.log('youtube iframe api ready!'); 
     }
-})
-}
-
+  })
+} 
+  } 
+ 
     hideLoading(){
       setTimeout(() => {
         this.loading.dismiss();
       },);
-    }
-    // ngOnDestroy(){
-    //   this.hideLoading();
-    // }
+      
+    } 
     offline(){
     }
-    ngOnDestroy(){
-    this.hideLoading();
-  }
  }
