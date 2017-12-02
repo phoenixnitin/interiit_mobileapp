@@ -68,7 +68,7 @@ import { Connectivity } from '../providers/connectivity/connectivity';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp, {navExitApp: false}),
+    IonicModule.forRoot(MyApp, {navExitApp: true}),
     IonicImageViewerModule,
     HttpModule
   ],
