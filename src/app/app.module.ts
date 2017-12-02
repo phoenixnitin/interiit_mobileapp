@@ -109,11 +109,8 @@ import { VideoPlayer } from '@ionic-native/video-player';
     // GoogleMaps,
     Connectivity,
     PhotoViewer,
-<<<<<<< HEAD
     VideoPlayer,
-=======
     YoutubeVideoPlayer,
->>>>>>> bf6a05e9a9c8d61f0afe5d66ee2a51237efe7f7c
     // GoogleMapsCluster
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

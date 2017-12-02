@@ -52,8 +52,9 @@
           </div>
         </div>    
     </div>
+   
     </div> 
-        
+  
   </div>
     
     <div *ngSwitchCase="'videos'">
@@ -62,7 +63,7 @@
             <div *ngIf="i % 4 === 0 ">
               <div class="row">
                   <div class="col col-25" *ngIf="videoArray.length > i">
-                    <img src="{{videoArray[i].thumbnailURL}}" onclick='ViewVideo(videoArray[i].videoURL)' width="100%" />    
+                    <img src="{{videoArray[i].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />    
                 </div>
                 <div class="col col-25" *ngIf="videoArray.length > i+1">
                     <img src="{{videoArray[i+1].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />
