@@ -1,7 +1,7 @@
 import {Component, OnInit,OnDestroy} from '@angular/core';
 import {Http} from '@angular/http';
 import { NavController ,AlertController, LoadingController} from 'ionic-angular';
-import {DomSanitizer} from '@angular/platform-browser';
+import {SafeResourceUrl,DomSanitizer} from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import *  as jQuery from 'jquery';
 declare global {
@@ -14,12 +14,15 @@ declare global {
     templateUrl:'live.html',
 })
 export class LivePage implements OnInit{ 
+    load:boolean = false;
     data: Array<object>;
+    c = -1;
+    santurl=[];
     loading:any;
     ngOnInit(){
       this.loadlive();
     };
-    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer){ 
+    constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer){
     }
   loadlive(){
   if(navigator.onLine==true){
@@ -94,6 +97,16 @@ func();
       },);
       
     } 
+    geturl(id,index){
+    if(this.c<index){
+    this.c= index;
+    this.santurl[index]=this.sanitizer.bypassSecurityTrustResourceUrl(id);
+    return this.santurl[index]
+    }
+    else{
+      return this.santurl[index];
+    }
+  }
     offline(){
     }
  }

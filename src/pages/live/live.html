@@ -16,8 +16,7 @@
     </div>
     <div class="iframe-object">
       <iframe  type="text/html" [attr.id]="d.SportName"
-      [src]="sanitizer.bypassSecurityTrustResourceUrl(d.embedURL)"
-      ></iframe>
+      [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
     </div>
     <div id="participant">
       <h2>{{d.Participant}}</h2>
