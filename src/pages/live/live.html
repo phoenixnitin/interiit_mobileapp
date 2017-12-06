@@ -16,7 +16,7 @@
     </div>
     <div class="iframe-object">
       <iframe  type="text/html" [attr.id]="d.SportName"
-      [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
+      [src]="geturl(d.embedURL,i)" allowfullscreen async defer ></iframe>
     </div>
     <div id="participant">
       <h2>{{d.Participant}}</h2>

@@ -23,6 +23,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="android-targetSdkVersion" value="23" />
+    <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="YouTubeDataApiKey" value="[YOUR YOUTUBE API]" />
     <platform name="android">
         <allow-intent href="market:*" />
