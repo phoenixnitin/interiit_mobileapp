@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
-// import { MapsPage } from '../maps/maps';
+import { MapsPage } from '../maps/maps';
 import { SponsorshipPage } from '../sponsorship/sponsorship';
 import { ResultPage } from '../result/result';
 import { SportsPage } from '../sports/sports';
@@ -18,7 +18,7 @@ export class HomePage {
 
   }
 gomaps(){
-    // this.navCtrl.push(MapsPage);
+    this.navCtrl.push(MapsPage);
     console.log('No Maps Page!!');
   }
 gospons(){
