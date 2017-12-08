@@ -9,77 +9,38 @@ page-gallery {
         padding-right: 10px;
         padding-top: 10px;
     }
-    .video-container {
+    ion-card {
         position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px; height: 0; overflow: hidden;
-        }
+        text-align: center;
+        width:500px;
+        height:300px;
+    }
+    #title{
+        position: relative;
+        text-align: center;
+        font-size: 60px;
+        padding-top: 20px;
+    }
 
-        .video-container iframe,
-        .video-container object,
-        .video-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
+    #livecontainer-alt{
+        position: relative;
+        text-align: center;
+        padding-top: 70px;
+    }
+    .iframe-object{
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 50px;
         width: 100%;
         height: 100%;
-        }
-
-        .container header{
-            background: #333333;
-            color: white;
-            text-align: center;
-            margin-bottom: 0px;
-        }
-        .container section{
-            background: #D2D2D2;
-            overflow: hidden;
-            position: relative;
-            top: 0px;
-            display: inline-block;
-            margin-top: -10px;
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-left: 1px;
-            min-height: 350px;
-            text-align: center;
-        }
-        .container section img{
-            margin: 5px;
-        }
-        .video-box{
-            font-size: 500%;
-            text-align: center;
-        }
-        .fix-icon-position{
-            /*margin: 0 auto;*/
-            /*top: 41%;*/
-            /*left: 46%;*/
-            position: absolute;
-            color: #fb4a4a;
-            margin-top: 72px;
-            margin-left: -15px;
-        }
-        /*.visibility{*/
-            /*visibility: hidden;*/
-        /*}*/
-
-        .each-image, .each-video{
-            max-height: 200px;
-            display: inline-table;
-        }
-        .image-link, .video-link{
-            max-height: inherit;
-        }
-        .image-size, .video-size{
-            max-height: inherit;
-        }
-        .fixit{
-            width: inherit;
-            text-align: center;
-        }
-
-
+    }
+    #offline{
+        opacity: 0.8;
+        text-decoration-color: black;
+    }
+  iframe{
+    width: inherit;
+  }
        
 
 }
