@@ -12,7 +12,11 @@
 
 <ion-content padding >
   <div padding>
+<<<<<<< HEAD
     <ion-segment [(ngModel)]="gallery"(ionChange)="loadlive()">
+=======
+    <ion-segment [(ngModel)]="gallery" (ionChange)="loadlive()">
+>>>>>>> d82ed8a565fe3f524cc267c51137fa6abf0af8f0
       <ion-segment-button value="photos">
         Photos
       </ion-segment-button>
@@ -46,14 +50,14 @@
           </ion-row>   -->
     <div class="row" *ngFor="let img of imageArray; let i= index; " >
       <div *ngIf="i % 4 === 0 ">
-        <div class="row">
+         <div class="row">
             <div class="col col-25" *ngIf="imageArray.length > i">
               <img src="{{imageArray[i].imageURL}}" (click)='ViewPhoto(imageArray[i].imageURL,imageArray[i].Title)' width="100%" />    
           </div>
           <div class="col col-25" *ngIf="imageArray.length > i+1">
               <img src="{{imageArray[i+1].imageURL}}" (click)='ViewPhoto(imageArray[i].imageURL,imageArray[i].Title)' width="100%" />
           </div>
-        </div>  
+        </div> 
 
       <div class="row">        
           <div class="col col-25" *ngIf="imageArray.length > i+2">
