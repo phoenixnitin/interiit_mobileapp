@@ -72,6 +72,8 @@ import { VideoPlayer } from '@ionic-native/video-player';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {navExitApp: true}),
+   
+   
     // IonicImageViewerModule,
   ],
   bootstrap: [IonicApp],
