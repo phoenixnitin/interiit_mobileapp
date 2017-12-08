@@ -27,7 +27,7 @@ export class GalleryPage implements OnInit{
     ngOnInit(){
       this.loadlive();
     };  
-    gallery: string = "photos";
+    gallery: string ="photos";
     isAndroid: boolean = false;
     imageArray;
     videoArray;

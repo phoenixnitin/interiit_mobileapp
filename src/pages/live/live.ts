@@ -16,6 +16,7 @@ declare global {
 export class LivePage implements OnInit{ 
     load:boolean = false;
     data: Array<object>;
+    urls =[];
     c = -1;
     santurl=[];
     loading:any;

@@ -12,7 +12,7 @@
 
 <ion-content padding >
   <div padding>
-    <ion-segment [(ngModel)]="gallery">
+    <ion-segment [(ngModel)]="gallery"(ionChange)="loadlive()">
       <ion-segment-button value="photos">
         Photos
       </ion-segment-button>
