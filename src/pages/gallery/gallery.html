@@ -78,9 +78,21 @@
   </div>
     
     <div *ngSwitchCase="'videos'">
+        <ion-row >
+            <ion-col *ngFor = "let d of data;let i = index" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <div id="title">
+                    <h6 style="color: white">{{d.Title}}</h6>
+                  </div>
+                  <div class="iframe-object">
+                      
+                    <iframe  type="text/html" [attr.id]="d.Title"
+                    [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
+                  </div>
+            </ion-col>
+            </ion-row>
         
-      <div *ngFor = "let d of data;let i = index">
-        <ion-card>
+      <!-- <div *ngFor = "let d of data;let i = index">
+      
         <div class="container" >
           <div id="livecontainer" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
             <div id="title">
@@ -94,8 +106,8 @@
           </div>
       
           </div>
-        </ion-card>
-        </div>
+        
+        </div> -->
           
       <!-- <ion-card *ngFor="let vid of videos" >
        <ion-card-title style="font-family:sans-serif; text-align: center;">
