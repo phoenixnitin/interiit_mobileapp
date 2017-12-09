@@ -23,8 +23,9 @@ import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
 import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
+import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
-// import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -50,7 +51,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
     ContactUsPage,
     Youtube,
     NotificationPage,
@@ -67,6 +68,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportVolleyball,
     SportWaterpolo,
     SportWeightlifting,
+    SportAll,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
 
     ContactUsPage,
     NotificationPage,
@@ -101,6 +103,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportVolleyball,
     SportWaterpolo,
     SportWeightlifting,
+    SportAll,
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar no-border-bottom>
+ <ion-title>{{ sportname }}</ion-title>
+    </ion-navbar>
+   <!-- </ion-header> -->
+   <ion-toolbar no-border-top>
+   <ion-segment color="secondary" [(ngModel)]="tabs">
+
+     <ion-segment-button *ngFor="let item of data; let i = index" (click)="selectTab(i , $event)"
+                          value="{{i}}" [ngClass]="{ 'active': i == 0 }">{{item.title}}
+     </ion-segment-button>
+     <ion-segment-button class="offlinecontent hide" (click)="selectTab(-1, $event)"
+                          value="-1">Offline
+     </ion-segment-button>
+<!--<ion-segment-button (click)="selectTab(1, $event)"-->
+                   <!--value="1">Tab2-->
+<!--</ion-segment-button>-->
+<!--<ion-segment-button (click)="selectTab(2, $event)"-->
+                   <!--value="2">Tab3-->
+<!--</ion-segment-button>-->
+<!--<ion-segment-button (click)="selectTab(3, $event)"-->
+                   <!--value="3">Tab4-->
+<!--</ion-segment-button>-->
+
+<!--<div id="slide" class="slide"></div>-->
+</ion-segment>
+
+</ion-toolbar>
+</ion-header>
+   <ion-content>
+    <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
+      <ion-slide *ngFor="let item of data;">
+        <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px" (abort)="checkOffline()" (error)="checkOffline()"></iframe>
+      </ion-slide>
+      <!--<ion-slide>-->
+        <!--<h1>ContentTab 2</h1>-->
+      <!--</ion-slide>-->
+      <!--<ion-slide>-->
+        <!--<h1>ContentTab 3</h1>-->
+      <!--</ion-slide>-->
+      <!--<ion-slide>-->
+        <!--<h1>ContentTab 4</h1>-->
+      <!--</ion-slide>-->
+    </ion-slides>
+     <h1 class="offlinecontent hide">You seem to be offline. Please connect to internet and try again.</h1>
+   </ion-content>
