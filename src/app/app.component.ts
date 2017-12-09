@@ -40,7 +40,7 @@ export class MyApp {
       { title: 'Sports', component: SportsPage ,icon:'american-football' },
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
-       { title: 'Maps', component: MapsPage ,icon:'map'},
+      { title: 'Maps', component: MapsPage ,icon:'navigate'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
     ];
