@@ -41,7 +41,7 @@ export class GalleryPage implements OnInit{
 
           this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
               .subscribe(res => {
-                  this.videoArray = res.json().Video;
+                  this.data = res.json().Video;
               });
   }
 
