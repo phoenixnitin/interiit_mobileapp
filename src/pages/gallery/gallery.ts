@@ -46,21 +46,33 @@ export class GalleryPage implements OnInit{
   }
 
   loadlive(){
-    if(navigator.onLine==true){
-      var $ =jQuery;
-      $("#offline").hide();
+    if(navigator.onLine==true)  {
+    var $ =jQuery;
+    $("#offline").hide();
+    if(!this.data){
     this.loading = this.loadingCtrl.create({
     content: 'Please wait..',
        spinner: 'crescent'
        
    });
-  this.loading.present(this.loading);
-  this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1YmVNuBSrq58PZRdxNu1-epOBB3osCaMXnYU54vgzfAI&sheet=Video')
-  .subscribe(res => {
-   this.data = res.json().Video;
-  this.hideLoading();
-  func();
-  });
+    this.loading.present(this.loading);
+    this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1YmVNuBSrq58PZRdxNu1-epOBB3osCaMXnYU54vgzfAI&sheet=Video')
+    .subscribe(res => {
+     this.data = res.json().Video;
+    this.hideLoading();
+    func();
+    });
+  }
+  else{
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait..',
+         spinner: 'crescent'
+         
+     });
+    this.loading.present(this.loading);
+    this.hideLoading1();
+    func();
+  }
     }
     else{
       this.offline();
@@ -115,8 +127,12 @@ export class GalleryPage implements OnInit{
       hideLoading(){
         setTimeout(() => {
           this.loading.dismiss();
-        },);
-        
+        },);   
+      }
+      hideLoading1(){
+        setTimeout(() => {
+          this.loading.dismiss();
+        },1000);   
       } 
       geturl(id,index){
       if(this.c<index){
