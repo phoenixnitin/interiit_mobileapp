@@ -43,6 +43,7 @@ export class GalleryPage implements OnInit{
               .subscribe(res => {
                   this.data = res.json().Video;
               });
+              
   }
 
   loadlive(){
