@@ -33,7 +33,7 @@ export class GalleryPage implements OnInit{
     videoArray;
   constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer, private _photoViewer: PhotoViewer
     ){
-          console.log("constructor")
+          
           this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1EcJRWQPx_IEjsq4EBeOoHfSSjqpxbziqdlFm0JsNkeI&sheet=Image')
                               .subscribe(res => {
                                   this.imageArray = res.json().Image;
