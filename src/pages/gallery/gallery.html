@@ -12,7 +12,7 @@
 
 <ion-content padding >
   <div padding>
-    <ion-segment [(ngModel)]="gallery">
+    <ion-segment [(ngModel)]="gallery" (ionChange)="loadlive()">
       <ion-segment-button value="photos">
         Photos
       </ion-segment-button>
@@ -32,16 +32,36 @@
     </ion-slides>
      </ion-card> -->
     <div *ngSwitchCase="'photos'">
-    <div class="row" *ngFor="let img of imageArray; let i= index; " >
+        <!-- <ion-row #imageRowEl>
+            <ion-col *ngFor="let photoswipeItem of photoswipeItems; let index = index" #colEl col-4 col-sm-3 col-md-3 col-lg-3 col-xl-3>
+              <img tappable
+                   [alt]="photoswipeItem.title"
+                   [height]="imageHeight || calcImageHeight(colEl)"
+                   [src]="photoswipeItem.src"
+                   [title]="photoswipeItem.title"
+                   [width]="imageWidth || calcImageWidth(colEl)"
+                   (click)="pswpMultiThumbnail(index)"
+                   object-fit="cover" />
+            </ion-col>
+          </ion-row>   -->
+          <ion-row #imageRowEl>
+            <ion-col *ngFor="let img of imageArray" #colEl col-4 col-sm-3 col-md-3 col-lg-3 col-xl-3>
+                <img style="border: #FFFFFF 2px solid;"
+               
+                [src]="img.imageURL"
+                (click)="ViewPhoto(img.imageURL,img.Title)"/>
+            </ion-col>
+            </ion-row>   
+    <!-- <div class="row" *ngFor="let img of imageArray; let i= index; " >
       <div *ngIf="i % 4 === 0 ">
-        <div class="row">
+         <div class="row">
             <div class="col col-25" *ngIf="imageArray.length > i">
               <img src="{{imageArray[i].imageURL}}" (click)='ViewPhoto(imageArray[i].imageURL,imageArray[i].Title)' width="100%" />    
           </div>
           <div class="col col-25" *ngIf="imageArray.length > i+1">
               <img src="{{imageArray[i+1].imageURL}}" (click)='ViewPhoto(imageArray[i].imageURL,imageArray[i].Title)' width="100%" />
           </div>
-        </div>  
+        </div> 
 
       <div class="row">        
           <div class="col col-25" *ngIf="imageArray.length > i+2">
@@ -53,33 +73,29 @@
         </div>    
     </div>
    
-    </div> 
+    </div>  -->
   
   </div>
     
     <div *ngSwitchCase="'videos'">
         
-        <div class="row"*ngFor="let vid of videoArray; let i= index; " >
-            <div *ngIf="i % 4 === 0 ">
-              <div class="row">
-                  <div class="col col-25" *ngIf="videoArray.length > i">
-                    <img src="{{videoArray[i].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />    
-                </div>
-                <div class="col col-25" *ngIf="videoArray.length > i+1">
-                    <img src="{{videoArray[i+1].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />
-                </div>
-              </div>  
+      <div *ngFor = "let d of data;let i = index">
+        <ion-card>
+        <div class="container" >
+          <div id="livecontainer" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
+            <div id="title">
+              <h2 style="font-weight: bold">{{d.Title}}</h2>
+            </div>
+            <div class="iframe-object">
+              <iframe  type="text/html" [attr.id]="d.Title"
+              [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
+            </div>
+            
+          </div>
       
-            <div class="row">        
-                <div class="col col-25" *ngIf="videoArray.length > i+2">
-                    <img src="{{videoArray[i+2].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />
-                </div>
-                <div class="col col-25" *ngIf="videoArray.length > i+3">
-                    <img src="{{videoArray[i+3].thumbnailURL}}" (click)='ViewVideo(videoArray[i].videoURL)' width="100%" />
-                </div>
-              </div>    
           </div>
-          </div>
+        </ion-card>
+        </div>
           
       <!-- <ion-card *ngFor="let vid of videos" >
        <ion-card-title style="font-family:sans-serif; text-align: center;">
