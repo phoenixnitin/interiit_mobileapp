@@ -24,7 +24,7 @@ import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
-// import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,8 +34,8 @@ import { Push} from '@ionic-native/push';
 //import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
-// import { GoogleMaps } from '../providers/google-maps/google-maps';
-// import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
+import { GoogleMaps } from '../providers/google-maps/google-maps';
+import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
 import { Connectivity } from '../providers/connectivity/connectivity';
 import { VideoPlayer } from '@ionic-native/video-player';
 
@@ -50,7 +50,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
     ContactUsPage,
     Youtube,
     NotificationPage,
@@ -86,7 +86,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportsPage,
     ResultPage,
     SponsorshipPage,
-    // MapsPage,
+    MapsPage,
 
     ContactUsPage,
     NotificationPage,
@@ -107,12 +107,12 @@ import { VideoPlayer } from '@ionic-native/video-player';
   providers: [
     StatusBar,
     SplashScreen,
-    // GoogleMaps,
+    GoogleMaps,
     Connectivity,
     PhotoViewer,
     VideoPlayer,
     YoutubeVideoPlayer,
-    // GoogleMapsCluster
+    GoogleMapsCluster,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

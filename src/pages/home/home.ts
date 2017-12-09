@@ -19,7 +19,7 @@ export class HomePage {
   }
 gomaps(){
     this.navCtrl.push(MapsPage);
-//     console.log('No Maps Page!!');
+    console.log('No Maps Page!!');
   }
 gospons(){
     this.navCtrl.push(SponsorshipPage);

@@ -9,7 +9,7 @@ import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
 import {LivePage}from'../pages/live/live';
-//import { MapsPage } from '../pages/maps/maps';
+import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
@@ -40,7 +40,7 @@ export class MyApp {
       { title: 'Sports', component: SportsPage ,icon:'american-football' },
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
-      // { title: 'Maps', component: MapsPage ,icon:'home'},
+       { title: 'Maps', component: MapsPage ,icon:'map'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
     ];
