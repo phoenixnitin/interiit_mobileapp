@@ -5,6 +5,16 @@ page-map {
 
   #map {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 120px);
+  }
+  #overlay{
+    position: relative;
+    height: 120px;
+    overflow: scroll;
+    border-bottom: 1px solid #ddd;
+  .list-group-item{
+    color: #fff;
+    background-color: #283e6a;
+  }
   }
 }

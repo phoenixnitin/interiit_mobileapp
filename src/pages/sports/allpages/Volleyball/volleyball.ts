@@ -8,8 +8,8 @@ import * as jQuery from 'jquery';
   templateUrl: 'volleyball.html'
 })
 export class SportVolleyball {
-  selectedItem: any;
-  volleyball: Array<object>;
+  // selectedItem: any;
+  // volleyball: Array<object>;
   loading:any;
   // icons: string[];
   // items: Array<{title: string, note: string, icon: string}>;
@@ -19,21 +19,21 @@ export class SportVolleyball {
 
   constructor(private _http: Http, public navCtrl: NavController, public loadingCtrl: LoadingController, public navParams: NavParams, public sanitizer: DomSanitizer) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    // this.selectedItem = navParams.get('item');
     this.loading = this.loadingCtrl.create({
               content: 'Please wait..',
               spinner: 'crescent'
             });
     this.loading.present(this.loading);
-    this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Volleyball')
-                .subscribe(res => {
-                  this.volleyball = res.json().Volleyball;
-                  console.log(this.volleyball);
-                  this.hideLoading();
-                }, error => {
-                  console.log('error occured.');
-                  this.hideLoading();
-                });
+    // this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Volleyball')
+    //             .subscribe(res => {
+    //               this.volleyball = res.json().Volleyball;
+    //               console.log(this.volleyball);
+    //               this.hideLoading();
+    //             }, error => {
+    //               console.log('error occured.');
+    //               this.hideLoading();
+    //             });
     // Let's populate this page with some filler content for funzies
     // this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     // 'american-football', 'boat', 'bluetooth', 'build'];

@@ -15,6 +15,10 @@ page-gallery {
         width:500px;
         height:300px;
     }
+    .each-image, .each-video{
+        //padding: 5px;
+        min-height: 0px;
+    }
     #title{
         position: relative;
         text-align: center;
@@ -41,6 +45,6 @@ page-gallery {
   iframe{
     width: inherit;
   }
-       
+
 
 }
