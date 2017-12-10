@@ -21,7 +21,7 @@ export class LivePage implements OnInit{
     santurl=[];
     loading:any;
     ngOnInit(){
-      this.loadlive();
+    this.loadlive();
     };
     constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer){
     }
@@ -37,7 +37,7 @@ export class LivePage implements OnInit{
 this.loading.present(this.loading);
 this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
 .subscribe(res => {
- this.data = res.json().livedata;
+this.data = res.json().livedata;
 this.hideLoading();
 func();
 });
@@ -97,6 +97,9 @@ func();
         this.loading.dismiss();
       },);
       
+    }
+    ngOnDestroy(){
+      this.hideLoading();
     } 
     geturl(id,index){
     if(this.c<index){
