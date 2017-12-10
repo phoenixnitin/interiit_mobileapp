@@ -17,23 +17,28 @@ declare global {
   selector: 'page-gallery',
   templateUrl: 'gallery.html'
 })
-export class GalleryPage implements OnInit{
- 
+export class GalleryPage implements OnInit, OnDestroy{
+
     load:boolean = false;
+    imageCounter = 20;
+    videoCounter = 10;
+    showClick = true;
+    showVideoClick=true;
     data: Array<object>;
     c = -1;
     santurl=[];
     loading:any;
     ngOnInit(){
       this.loadlive();
-    };  
+    };
     gallery: string ="photos";
     isAndroid: boolean = false;
     imageArray;
     videoArray;
   constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer, private _photoViewer: PhotoViewer
     ){
-          
+          this.showClick=true;
+          this.showVideoClick=true;
           this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1EcJRWQPx_IEjsq4EBeOoHfSSjqpxbziqdlFm0JsNkeI&sheet=Image')
                               .subscribe(res => {
                                   this.imageArray = res.json().Image;
@@ -43,18 +48,33 @@ export class GalleryPage implements OnInit{
               .subscribe(res => {
                   this.data = res.json().Video;
               });
-              
+
+  }
+  clickMore(data){
+    if(data === 'image'){
+      this.imageCounter = this.imageCounter + 20;
+      if(this.imageCounter > this.imageArray.length){
+        this.showClick = false;
+      }
+    }
+    else{
+      this.videoCounter = this.videoCounter + 10;
+      if(this.videoCounter > this.data.length){
+        this.showVideoClick = false;
+      }
+    }
   }
 
   loadlive(){
     if(navigator.onLine==true)  {
     var $ =jQuery;
     $("#offline").hide();
+    this.videoCounter =10;
     if(!this.data){
     this.loading = this.loadingCtrl.create({
     content: 'Please wait..',
        spinner: 'crescent'
-       
+
    });
     this.loading.present(this.loading);
     this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1YmVNuBSrq58PZRdxNu1-epOBB3osCaMXnYU54vgzfAI&sheet=Video')
@@ -68,7 +88,7 @@ export class GalleryPage implements OnInit{
     this.loading = this.loadingCtrl.create({
       content: 'Please wait..',
          spinner: 'crescent'
-         
+
      });
     this.loading.present(this.loading);
     this.hideLoading1();
@@ -79,7 +99,7 @@ export class GalleryPage implements OnInit{
       this.offline();
     }
      function func(){
-      var $ =jQuery; 
+      var $ =jQuery;
       $(document).ready(function(){
       if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined'){
       var tag = document.createElement('script');
@@ -110,7 +130,7 @@ export class GalleryPage implements OnInit{
           'onStateChange':function(status){
             if (status.data == YT.PlayerState.PLAYING) {
               $.each(players, function(k, v) {
-                  if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) { 
+                  if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) {
                       this.stopVideo();
                   }
               });
@@ -118,25 +138,22 @@ export class GalleryPage implements OnInit{
           }
         }
       }));
-    });        
-      console.log('youtube iframe api ready!'); 
+    });
+      console.log('youtube iframe api ready!');
       }
     })
-  } 
-    } 
-   
+  }
+    }
+
       hideLoading(){
         setTimeout(() => {
           this.loading.dismiss();
-        },);   
+        },);
       }
       hideLoading1(){
         setTimeout(() => {
           this.loading.dismiss();
         },1000);   
-      }
-      ngOnDestroy(){
-        this.hideLoading();
       } 
       geturl(id,index){
       if(this.c<index){
@@ -150,14 +167,16 @@ export class GalleryPage implements OnInit{
     }
       offline(){
       }
-   
-  
-   
+
+
+
   ViewPhoto(url,title){
       this._photoViewer.show(url,title);
   }
- 
- 
-  
+
+  ngOnDestroy(){
+    this.hideLoading();
+  }
+
 
 }

@@ -14,7 +14,7 @@ import {SportTennis} from '../sports/allpages/Tennis/tennis';
 import {SportVolleyball} from '../sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../sports/allpages/Weightlifting/weightlifting';
-import {SportAll} from '../sports/All_sports/all_sports';
+
 @Component({
   selector: 'page-sports',
   templateUrl: 'sports.html'
@@ -37,19 +37,19 @@ export class SportsPage {
 itemSelected(item){
     console.log(item);
     if(navigator.onLine == true){
-      if(item === 'Athletics'){this.navCtrl.push(SportAll, {'sport_name':'Athletics'});}
-      else if (item === 'Badminton'){this.navCtrl.push(SportAll, {'sport_name':'Badminton'});}
-      else if (item === 'Basketball'){this.navCtrl.push(SportAll, {'sport_name':'Basketball'});}
-      else if (item === 'Cricket'){this.navCtrl.push(SportAll, {'sport_name':'Cricket'});}
-      else if (item === 'Football'){this.navCtrl.push(SportAll, {'sport_name':'Football'});}
-      else if (item === 'Hockey'){this.navCtrl.push(SportAll, {'sport_name':'Hockey'});}
-      else if (item === 'Squash'){this.navCtrl.push(SportAll, {'sport_name':'Squash'});}
-      else if (item === 'Swimming'){this.navCtrl.push(SportAll, {'sport_name':'Swimming'});}
-      else if (item === 'Tennis'){this.navCtrl.push(SportAll, {'sport_name':'Tennis'});}
-      else if (item === 'TableTennis'){this.navCtrl.push(SportAll, {'sport_name':'Table Tennis'});}
-      else if (item === 'Volleyball'){this.navCtrl.push(SportAll, {'sport_name':'Volleyball'});}
-      else if (item === 'Waterpolo'){this.navCtrl.push(SportAll, {'sport_name':'Waterpolo'});}
-      else if (item === 'Weightlifting'){this.navCtrl.push(SportAll, {'sport_name':'Weightlifting'});}
+      if(item === 'Athletics'){this.navCtrl.push(SportAthletics);}
+      else if (item === 'Badminton'){this.navCtrl.push(SportBadminton);}
+      else if (item === 'Basketball'){this.navCtrl.push(SportBasketball);}
+      else if (item === 'Cricket'){this.navCtrl.push(SportCricket);}
+      else if (item === 'Football'){this.navCtrl.push(SportFootball);}
+      else if (item === 'Hockey'){this.navCtrl.push(SportHockey);}
+      else if (item === 'Squash'){this.navCtrl.push(SportSquash);}
+      else if (item === 'Swimming'){this.navCtrl.push(SportSwimming);}
+      else if (item === 'Tennis'){this.navCtrl.push(SportTennis);}
+      else if (item === 'TableTennis'){this.navCtrl.push(SportTableTennis);}
+      else if (item === 'Volleyball'){this.navCtrl.push(SportVolleyball);}
+      else if (item === 'Waterpolo'){this.navCtrl.push(SportWaterpolo);}
+      else if (item === 'Weightlifting'){this.navCtrl.push(SportWeightlifting);}
 
     }
   else{
