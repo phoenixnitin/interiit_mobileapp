@@ -19,12 +19,12 @@ page-live{
     #livecontainer-alt{
         position: relative;
         text-align: center;
-        padding-top: 70px;
+        padding-top: 15px;
     }
     .iframe-object{
         position: relative;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        //padding-top: 50px;
+        //padding-bottom: 50px;
         width: 100%;
         height: 100%;
     }
@@ -34,5 +34,6 @@ page-live{
     }
   iframe{
     width: inherit;
+    border: 0px;
   }
 }

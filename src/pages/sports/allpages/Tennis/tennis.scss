@@ -1,9 +1,13 @@
 sport-tennis{
     $num-of-tabs: 3;
+  ion-navbar .toolbar-background-md{
+    background: #32db64;
+  }
   ion-toolbar{
     width: fit-content;
     display: inline-flex;
     overflow-x: scroll;
+    box-shadow: 0px 0px 0px 0px transparent !important;
     .toolbar-content{
       overflow-x: scroll;
     }
@@ -15,6 +19,7 @@ sport-tennis{
         width: fit-content !important;
         margin: 0 5px !important;
         border-radius: 4px;
+        color: black !important;
       }
     }
   }
