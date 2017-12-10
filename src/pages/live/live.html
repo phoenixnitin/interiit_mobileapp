@@ -9,27 +9,33 @@
 <ion-content padding>
 <div *ngFor = "let d of data;let i = index">
 <ion-card>
-<div class="container" >
-  <div id="livecontainer" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
+<div class="" >
+  <div id="" [ngClass]="d.Status=='offline' && d.showText=='off' ? 'hide':'show'">
     <div id="title">
-      <h2 style="font-weight: bold">Sport : {{d.SportName}}</h2>
-    </div><br/>
+      <h2>{{d.SportName}}</h2>
+    </div>
     <div class="iframe-object">
       <iframe  type="text/html" [attr.id]="d.SportName"
       [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
-    </div><br/>
+    </div>
     <div id="participant">
-      <h2 style="font-weight: bold">Participant : {{d.Participant}}</h2>
-    </div><br/>
-    <div id="score"><h2 style="font-weight: bold">Score : {{d.Score}}</h2></div><br/>
-    <div id="description"><h2 style="font-weight: bold">Description : {{d.Description}}</h2></div>
-  </div><br/>
-  <div id="livecontainer-alt" [ngClass]="{'hide': d.Status=='online'|| (d.Status=='offline')&&(d.showText=='on')}">
-      <h2 style="font-weight: bold">Live stream for {{d.SportName}} is not available now. Please check back soon.</h2>
-  </div><br/><br/>
+      <h2>{{d.Participant}}</h2>
+    </div>
+    <div id="score"><h2>{{d.Score}}</h2></div>
+    <div id="description"><h2>{{d.Description}}</h2></div>
+  </div>
+  <!--<div id="livecontainer-alt" [ngClass]="{'hide': d.Status=='online'|| (d.Status=='offline')&&(d.showText=='on')}">-->
+      <!--<h2>Live stream for {{d.SportName}} is not available now. Please check back soon.</h2>-->
+  <!--</div>-->
+  <br/>
 
   </div>
 </ion-card>
+  <ion-card *ngIf="data.length==1 && data[0].Status=='offline'">
+    <div id="livecontainer-alt">
+      <h2>Live stream is not available now. Please check back soon.</h2>
+  </div><br/>
+  </ion-card>
 </div>
 </ion-content>
 
