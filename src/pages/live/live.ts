@@ -13,7 +13,7 @@ declare global {
     selector: 'page-live',
     templateUrl:'live.html',
 })
-export class LivePage implements OnInit{ 
+export class LivePage implements OnInit, OnDestroy{
     load:boolean = false;
     data: Array<object>;
     urls =[];
@@ -32,7 +32,7 @@ export class LivePage implements OnInit{
   this.loading = this.loadingCtrl.create({
   content: 'Please wait..',
      spinner: 'crescent'
-     
+
  });
 this.loading.present(this.loading);
 this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
@@ -46,7 +46,7 @@ func();
     this.offline();
   }
    function func(){
-    var $ =jQuery; 
+    var $ =jQuery;
     $(document).ready(function(){
     if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined'){
     var tag = document.createElement('script');
@@ -77,7 +77,7 @@ func();
         'onStateChange':function(status){
           if (status.data == YT.PlayerState.PLAYING) {
             $.each(players, function(k, v) {
-                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) { 
+                if (this.getPlayerState() == YT.PlayerState.PLAYING && this.getIframe().id != status.target.getIframe().id) {
                     this.stopVideo();
                 }
             });
@@ -85,19 +85,19 @@ func();
         }
       }
     }));
-  });        
-    console.log('youtube iframe api ready!'); 
+  });
+    console.log('youtube iframe api ready!');
     }
   })
-} 
-  } 
- 
+}
+  }
+
     hideLoading(){
       setTimeout(() => {
         this.loading.dismiss();
       },);
-      
-    } 
+
+    }
     geturl(id,index){
     if(this.c<index){
     this.c= index;
@@ -110,4 +110,7 @@ func();
   }
     offline(){
     }
+    ngOnDestroy(){
+      this.hideLoading();
+}
  }

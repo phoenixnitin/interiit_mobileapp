@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
   selector: 'page-notification',
   templateUrl: 'notification.html'
 })
-export class NotificationPage {
+export class NotificationPage implements OnDestroy{
   notification: Array<object>;
   notificationOffline: Array<object>;
   loading:any;
@@ -47,5 +47,8 @@ export class NotificationPage {
     setTimeout(() => {
       this.loading.dismiss();
     },);
+  }
+  ngOnDestroy(){
+    this.hideLoading();
   }
 }
