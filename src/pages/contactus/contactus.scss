@@ -1,3 +1,36 @@
-page-home {
-
+page-contactus {
+  ion-content{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    ion-item{
+      background-color: transparent !important;
+    }
+  }
+  .item-md, .item-ios{
+    p{
+      width: max-content;
+      line-height: 1.7em;
+      color: white !important;
+      b{
+        font-size: 18px;
+        a{
+          color: #ffdd00;
+        }
+      }
+      a:not(:first-child){
+          color: #00d3ff;
+        }
+    }
+    .input-wrapper{
+      //overflow: scroll;
+      ion-label{
+        //overflow: inherit;
+      }
+    }
+  }
+  .img-thumbnail{
+    background-color: #e3e3e3;
+    padding: 2px;
+  }
 }

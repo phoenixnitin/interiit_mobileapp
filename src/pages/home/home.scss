@@ -1,5 +1,24 @@
 page-home {
-    
+  ion-content{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  ion-fab{
+    position: fixed;
+  }
+  .home-content{
+    color: white;
+    //background-color: rgba(0,0,0,0.7);
+    margin-bottom: 20px;
+    h3{
+      color: coral;
+    }
+    p{
+      text-align: justify;
+      font-size: 16px;
+    }
+  }
   #gridcontent{
 position:absolute;
 top:20%;
@@ -47,6 +66,6 @@ justify-content: center;
   display:flex;
   justify-content:center;
   height:90px;
-}      
-        
+}
+
 }

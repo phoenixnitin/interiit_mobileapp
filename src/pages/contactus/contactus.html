@@ -8,16 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-<ion-item *ngFor="let core of cores">
-  <ion-thumbnail item-start>
-  <img src="http://www.drive.google.com/uc?export=view&id={{core.PhotoID}}">
-  </ion-thumbnail>
-  <p><b>{{core.Name}}</b><br> 
+<ion-item *ngFor="let core of coresOffline">
+  <p><b><a href="{{ core.ProfileUrl }}">{{core.Name}}</a></b><br>
     <ion-icon ios="ios-paper" md="ios-paper"></ion-icon>
-    {{core.Department}}<br> 
+    {{core.Department}}<br>
     <ion-icon name="call"></ion-icon>
-    {{core.MobileNo}} <br> 
+    <a href="tel:{{ core.MobileNo }}">{{core.MobileNo}} </a><br>
     <ion-icon name="mail"></ion-icon>
-    {{core.Email}}</p>
+    <a href="mailto:{{ core.Email }}" target="_blank">{{core.Email}}</a></p>
 </ion-item>
 </ion-content>

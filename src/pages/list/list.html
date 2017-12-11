@@ -1,20 +1,25 @@
 <ion-header>
     <ion-navbar no-border-bottom>
- <ion-title>swipedtabs</ion-title>        
+ <ion-title>Offline</ion-title>
     </ion-navbar>
    <!-- </ion-header> -->
    <ion-toolbar no-border-top>
    <ion-segment color="secondary" [(ngModel)]="tabs">
-      <ion-segment-button (click)="selectTab(0)"
-                          value="0">Tab1
+
+     <ion-segment-button (click)="selectTab(0, $event)" class="active"
+                          value="0">Offline
    </ion-segment-button>
-<ion-segment-button (click)="selectTab(1)"
-                   value="1">Tab2
-</ion-segment-button>
-<ion-segment-button (click)="selectTab(2)"
-                   value="2">Tab3
-</ion-segment-button> 
-<div id="slide" class="slide"></div>
+<!--<ion-segment-button (click)="selectTab(1, $event)"-->
+                   <!--value="1">Tab2-->
+<!--</ion-segment-button>-->
+<!--<ion-segment-button (click)="selectTab(2, $event)"-->
+                   <!--value="2">Tab3-->
+<!--</ion-segment-button>-->
+<!--<ion-segment-button (click)="selectTab(3, $event)"-->
+                   <!--value="3">Tab4-->
+<!--</ion-segment-button>-->
+
+<!--<div id="slide" class="slide"></div>-->
 </ion-segment>
 
 </ion-toolbar>
@@ -22,13 +27,13 @@
    <ion-content>
     <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
       <ion-slide>
-        <h1>ContentTab 1</h1>
+        <h1>You seem to be offline. Please connect to internet and try again.</h1>
       </ion-slide>
-      <ion-slide>
-        <h1>ContentTab 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>ContentTab 3</h1>
-      </ion-slide>
+      <!--<ion-slide>-->
+        <!--<h1>ContentTab 3</h1>-->
+      <!--</ion-slide>-->
+      <!--<ion-slide>-->
+        <!--<h1>ContentTab 4</h1>-->
+      <!--</ion-slide>-->
     </ion-slides>
    </ion-content>

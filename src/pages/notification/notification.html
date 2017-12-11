@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<h3>You are at Notification page</h3>-->
+  <div class="container">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default" *ngFor="let data of notificationOffline">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#{{ data.id }}">{{ data.title }}<span class="right">{{ data.date }}</span></a>
+          </h4>
+        </div>
+        <div id="{{ data.id }}" class="panel-collapse collapse">
+          <div class="panel-body"><td [innerHtml]=" data.message "></td></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
