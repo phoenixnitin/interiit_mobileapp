@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,ViewChild, OnDestroy } from '@angular/core';
 import { NavController, NavParams ,Slides, LoadingController} from 'ionic-angular';
 import {Http} from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ import * as jQuery from 'jquery';
   selector: 'sport-tabletennis',
   templateUrl: 'tabletennis.html'
 })
-export class SportTableTennis {
+export class SportTableTennis implements OnDestroy {
   // selectedItem: any;
   // tabletennis: Array<object>;
   loading:any;
@@ -16,7 +16,9 @@ export class SportTableTennis {
   @ViewChild('pageSlider') pageSlider: Slides;
   tabs: any = '0';
 
-
+  ngOnDestroy(){
+    this.hideLoading();
+  }
   constructor(private _http: Http, public navCtrl: NavController, public loadingCtrl: LoadingController, public navParams: NavParams, public sanitizer: DomSanitizer) {
     // If we navigated to this page, we will have an item available as a nav param
     // this.selectedItem = navParams.get('item');
