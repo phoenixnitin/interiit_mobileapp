@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy} from '@angular/core';
+import { Component, OnInit,OnDestroy} from '@angular/core';
 import {Http} from '@angular/http';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { VideoPlayer } from '@ionic-native/video-player';
@@ -153,8 +153,8 @@ export class GalleryPage implements OnInit, OnDestroy{
       hideLoading1(){
         setTimeout(() => {
           this.loading.dismiss();
-        },1000);
-      }
+        },1000);   
+      } 
       geturl(id,index){
       if(this.c<index){
       this.c= index;
