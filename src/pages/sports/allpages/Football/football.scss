@@ -3,6 +3,12 @@ sport-football{
   ion-navbar .toolbar-background-md{
     background: #32db64;
   }
+  ion-spinner svg{
+    height: 20px;
+    width: initial;
+    zoom: 3;
+    position: absolute;
+  }
   ion-toolbar{
     width: fit-content;
     display: inline-flex;

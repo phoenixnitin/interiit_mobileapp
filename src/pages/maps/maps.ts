@@ -1,7 +1,7 @@
 import {Component,ViewChild,ElementRef, OnInit, OnDestroy} from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Connectivity } from '../connectivity/connectivity';
+import { Connectivity } from '../../providers/connectivity/connectivity';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
@@ -16,7 +16,7 @@ declare var google;
 
 export class MapsPage implements OnInit, OnDestroy{
 
-constructor(public connectivityService: Connectivity){}
+constructor(){}
 
 
 // @ViewChild('mapContainer') mapContainer : ElementRef;
@@ -1320,12 +1320,12 @@ constructor(public connectivityService: Connectivity){}
         // google.maps.event.addDomListener(window, 'load', initMap);
       }
 
-   if(this.connectivityService.isOnline())
+   if(navigator.onLine)
 {
 initMap();
 }
 
-      
+
   }
   ngOnDestroy(){
       jQuery('div.colorpicker.dropdown-menu.colorpicker-hidden').remove();

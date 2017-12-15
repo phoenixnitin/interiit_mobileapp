@@ -13,4 +13,9 @@ page-notification {
   .panel-heading{
     background: #cdffcd !important;
   }
+  @media screen and (max-width: 355px){
+    .panel-heading{
+      font-size: 14px;
+    }
+  }
 }

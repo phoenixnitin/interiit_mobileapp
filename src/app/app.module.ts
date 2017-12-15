@@ -23,6 +23,7 @@ import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
 import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
+import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/GeneralChampionship';
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { MapsPage } from '../pages/maps/maps';
@@ -69,13 +70,14 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
+    GeneralChampionship,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {navExitApp: true}),
-   
-   
+
+
     // IonicImageViewerModule,
   ],
   bootstrap: [IonicApp],
@@ -106,6 +108,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
+    GeneralChampionship,
   ],
   providers: [
     StatusBar,

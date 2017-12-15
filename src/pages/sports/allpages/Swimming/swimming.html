@@ -33,13 +33,16 @@
         <!--<iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(item.url)" width="100%" height="100%" frameborder="0px" (abort)="checkOffline()" (error)="checkOffline()"></iframe>-->
       <!--</ion-slide>-->
       <ion-slide>
-        <iframe src="http://indiaatsports.com/widget_matches?tournamentid=6730339196076032" width="100%" height="100%" frameborder="0px" (load)="hideLoading()"></iframe>
+        <ion-spinner id="first" name="crescent"></ion-spinner>
+        <iframe class="hide" src="http://indiaatsports.com/widget_matches?tournamentid=6730339196076032" width="100%" height="100%" frameborder="0px" (load)="hideloader(1)"></iframe>
       </ion-slide>
       <ion-slide>
-        <iframe src="http://static.interiit.com/pages/swimming_points_table.html" width="100%" height="100%" frameborder="0px" ></iframe>
+        <ion-spinner id="second" name="crescent"></ion-spinner>
+        <iframe class="hide" src="http://static.interiit.com/pages/swimming_points_table.html" width="100%" height="100%" frameborder="0px" (load)="hideloader(2)"></iframe>
       </ion-slide>
       <ion-slide>
-        <iframe src="http://indiaatsports.com/widget_participants?tournamentid=6730339196076032" width="100%" height="100%" frameborder="0px" ></iframe>
+        <ion-spinner id="third" name="crescent"></ion-spinner>
+        <iframe class="hide" src="http://indiaatsports.com/widget_participants?tournamentid=6730339196076032" width="100%" height="100%" frameborder="0px" (load)="hideloader(3)"></iframe>
       </ion-slide>
     </ion-slides>
      <h1 class="offlinecontent hide">You seem to be offline. Please connect to internet and try again.</h1>

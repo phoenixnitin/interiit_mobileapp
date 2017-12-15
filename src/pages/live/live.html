@@ -12,17 +12,17 @@
 <div class=""  [ngClass]="data[i].Status=='offline' && data[i].showText=='off' ? 'hide':'show'">
   <div id="" >
     <div id="title" >
-      <h2>{{data[i].SportName}}</h2>
+      <h2 [innerHtml]="data[i].SportName"></h2>
     </div>
     <div class="iframe-object" *ngIf='data[i].embedURL && d.embedURL == data[i].embedURL'>
       <iframe  type="text/html" [attr.id]="d.SportName"
       [src]="geturl(d.embedURL,i)" allowfullscreen ></iframe>
     </div>
     <div id="participant">
-      <h2>{{data[i].Participant}}</h2>
+      <h2 [innerHtml]="data[i].Participant"></h2>
     </div>
-    <div id="score"><h2>{{data[i].Score}}</h2></div>
-    <div id="description"><h2>{{data[i].Description}}</h2></div>
+    <div id="score"><h2 [innerHtml]="data[i].Score"></h2></div>
+    <div id="description"><h2 [innerHtml]="data[i].Description"></h2></div>
   </div>
   <!--<div id="livecontainer-alt" [ngClass]="{'hide': d.Status=='online'|| (d.Status=='offline')&&(d.showText=='on')}">-->
       <!--<h2>Live stream for {{d.SportName}} is not available now. Please check back soon.</h2>-->
