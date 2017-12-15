@@ -7,7 +7,13 @@ page-olapedal {
   .toolbar-background-md{
     background: #32db64;
   }
+  .toolbar-title-md, button.back-button-md{
+    color: white!important;
+  }
   .container{
     color: white;
+    a button:focus{
+      outline: 0px;
+    }
   }
 }
