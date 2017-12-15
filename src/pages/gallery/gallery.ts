@@ -3,10 +3,11 @@ import {Http} from '@angular/http';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { VideoPlayer } from '@ionic-native/video-player';
 import 'rxjs/add/operator/map';
-import { NavController,AlertController, LoadingController} from 'ionic-angular';
+import { NavController, AlertController, LoadingController, ModalController } from 'ionic-angular';
 import {SafeResourceUrl,DomSanitizer} from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import *  as jQuery from 'jquery';
+import { ModalPage } from '../modal/modal';
 declare global {
   interface Window {
     onYouTubeIframeAPIReady?: () => void;
@@ -35,7 +36,7 @@ export class GalleryPage implements OnInit, OnDestroy{
     isAndroid: boolean = false;
     imageArray;
     videoArray;
-  constructor(public sanitizer: DomSanitizer ,private _http: Http,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer, private _photoViewer: PhotoViewer
+    constructor(public sanitizer: DomSanitizer, private _http: Http, public modalController: ModalController,public loadingCtrl: LoadingController,public navCtrl: NavController,private youtube: YoutubeVideoPlayer, private _photoViewer: PhotoViewer
     ){
           this.showClick=true;
           this.showVideoClick=true;
@@ -49,6 +50,11 @@ export class GalleryPage implements OnInit, OnDestroy{
                   this.data = res.json().Video;
               });
 
+  }
+  openmodal(ind){
+    let modal = this.modalController.create(ModalPage,{'ind':ind});
+    modal.present();
+    console.log(ind);
   }
   clickMore(data){
     if(data === 'image'){

@@ -80,9 +80,6 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
     <engine name="android" spec="^6.2.3" />
-    <plugin name="com-sarriaroman-photoviewer" spec="^1.1.11" />
-    <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
-    <plugin name="cordova-plugin-backbutton" spec="^0.3.0" />
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="2.2.2" />
@@ -97,4 +94,7 @@
     <plugin name="cordova-plugin-backbutton" spec="^0.3.0" />
     <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
+    <plugin name="cordova-plugin-file" spec="^5.0.0" />
 </widget>
