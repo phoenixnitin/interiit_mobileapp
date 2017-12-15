@@ -86,6 +86,9 @@ export class GalleryPage implements OnInit, OnDestroy{
     this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1YmVNuBSrq58PZRdxNu1-epOBB3osCaMXnYU54vgzfAI&sheet=Video')
     .subscribe(res => {
      this.data = res.json().Video;
+     if(this.data.length < this.videoCounter){
+        this.showVideoClick = false;
+     }
     this.hideLoading();
     func();
     });
