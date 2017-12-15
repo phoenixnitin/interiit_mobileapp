@@ -12,6 +12,7 @@ import {LivePage}from'../pages/live/live';
 import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
+import { OLAPedalPage } from '../pages/ola/ola';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 declare var FCMPlugin;
 
@@ -41,6 +42,7 @@ export class MyApp {
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
       { title: 'Maps', component: MapsPage ,icon:'navigate'},
+      { title: 'Take a Ride', component: OLAPedalPage ,icon:'car'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
     ];

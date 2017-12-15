@@ -32,6 +32,7 @@ import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push} from '@ionic-native/push';
+import {OLAPedalPage} from '../pages/ola/ola';
 
 //import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
@@ -71,6 +72,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWeightlifting,
     SportAll,
     GeneralChampionship,
+    OLAPedalPage,
   ],
   imports: [
     BrowserModule,
@@ -109,6 +111,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWeightlifting,
     SportAll,
     GeneralChampionship,
+    OLAPedalPage,
   ],
   providers: [
     StatusBar,
