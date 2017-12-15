@@ -2,17 +2,16 @@
    <ion-icon name="share" class="share" (click)="share(ind)"></ion-icon>
    <!-- <ion-icon name="md-download" class="download" (click)="saveimage(ind)"></ion-icon> -->
    <ion-icon name="close" class="close" (click)="closemodal()"></ion-icon>
-   <div *ngIf="imageArray">  
-   <div (swiperight)="nextimg()" >
-    <div (swipeleft)="previmg()">
-    <table><tr><td>  
- <img src="{{imageArray[ind].imageURL}}" zooming="true" zoom="true" class="bg"> 
+   <div *ngIf="imageArray">
+   <div (swiperight)="previmg()" >
+    <div (swipeleft)="nextimg()">
+<p style="position: static; height: fit-content; text-align: center">
+  <img src="{{imageArray[ind].imageURL}}" zooming="true" zoom="true" class="bg"></p>
       <!-- <img class="bg" zooming="true" zoom="true" src="{{imageArray[ind].imageURL}}" zoomable> -->
-</td></tr></table>
-   	</div>	
+   	</div>
      </div>
      </div>
-   
-    
+
+
 
 </body>

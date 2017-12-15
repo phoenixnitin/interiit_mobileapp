@@ -52,7 +52,7 @@ export class GalleryPage implements OnInit, OnDestroy{
 
   }
   openmodal(ind){
-    let modal = this.modalController.create(ModalPage,{'ind':ind});
+    let modal = this.modalController.create(ModalPage,{'ind':ind,'imageCounter':this.imageCounter});
     modal.present();
     console.log(ind);
   }
@@ -159,8 +159,8 @@ export class GalleryPage implements OnInit, OnDestroy{
       hideLoading1(){
         setTimeout(() => {
           this.loading.dismiss();
-        },1000);   
-      } 
+        },1000);
+      }
       geturl(id,index){
       if(this.c<index){
       this.c= index;

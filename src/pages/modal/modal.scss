@@ -6,12 +6,11 @@ page-modal{
     background-color:black;
 }
 @media screen and (orientation: portrait) {
-  .bg { max-width: 100%; }
+  .bg { max-width: 100%;position:absolute; }
 }
 
 @media screen and (orientation: landscape) {
   .bg { max-height: 100%;
-        width: auto; 
        }
 }
 ion-icon{
@@ -20,14 +19,13 @@ ion-icon{
 }
 
 .bg {
-    
-    position:absolute;
+
+
     top:0;
     bottom:0;
     display: block;
     margin: auto;
-    width: 100%;
-	height:auto;
+
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
