@@ -23,6 +23,7 @@ import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
 import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
+import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/GeneralChampionship';
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { MapsPage } from '../pages/maps/maps';
@@ -32,6 +33,7 @@ import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push} from '@ionic-native/push';
+import {OLAPedalPage} from '../pages/ola/ola';
 
 //import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
@@ -72,14 +74,16 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
-    ModalPage
+    ModalPage,
+    GeneralChampionship,
+    OLAPedalPage,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {navExitApp: true}),
-   
-   
+
+
     // IonicImageViewerModule,
   ],
   bootstrap: [IonicApp],
@@ -110,7 +114,9 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
-    ModalPage
+    ModalPage,
+    GeneralChampionship,
+    OLAPedalPage,
   ],
   providers: [
     StatusBar,

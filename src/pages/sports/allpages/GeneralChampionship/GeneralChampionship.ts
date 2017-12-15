@@ -4,10 +4,10 @@ import {Http} from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as jQuery from 'jquery';
 @Component({
-  selector: 'sport-athletics',
-  templateUrl: 'athletics.html'
+  selector: 'sport-GeneralChampionship',
+  templateUrl: 'GeneralChampionship.html'
 })
-export class SportAthletics implements OnDestroy{
+export class GeneralChampionship implements OnDestroy{
   // selectedItem: any;
   // athletics: Array<object>;
   loading:any;

@@ -13,9 +13,14 @@ export class GoogleMaps {
   mapLoaded: any;
   mapLoadedObserver: any;
   currentMarker: any;
+  markers: any = [];
+  apiKey: string;
+  location: any;
+  latLng={};
+  svgd: string;
   // apiKey: string;
 
-  apiKey: string="AIzaSyAV9zfTlFe-7L6h0pohlbnXAy8qMojUBnU";
+ // apiKey: string="AIzaSyAV9zfTlFe-7L6h0pohlbnXAy8qMojUBnU";
 
   constructor(public connectivityService: Connectivity) {
 
@@ -123,8 +128,8 @@ export class GoogleMaps {
       this.pleaseConnect.style.display = "none";
     }
 
-  }
-
+}
+}
   // addConnectivityListeners(): void {
   //
   //   this.connectivityService.watchOnline().subscribe(() => {
@@ -158,4 +163,4 @@ export class GoogleMaps {
   //
   // }
 
-}
+

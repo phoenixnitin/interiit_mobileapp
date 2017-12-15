@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,ViewChild, OnDestroy } from '@angular/core';
 import { NavController, NavParams ,Slides, LoadingController} from 'ionic-angular';
 import {Http} from '@angular/http';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ import * as jQuery from 'jquery';
   selector: 'sport-hockey',
   templateUrl: 'hockey.html'
 })
-export class SportHockey {
+export class SportHockey implements OnDestroy {
   // selectedItem: any;
   // hockey: Array<object>;
   loading:any;
@@ -16,15 +16,31 @@ export class SportHockey {
   @ViewChild('pageSlider') pageSlider: Slides;
   tabs: any = '0';
 
-
+  ngOnDestroy(){
+    // this.hideLoading();
+  }
+  hideloader(num){
+    if(num == 1){
+      jQuery('#first').hide();
+      jQuery('#first').siblings().removeClass('hide');
+    }
+    else if(num == 2){
+      jQuery('#second').hide();
+      jQuery('#second').siblings().removeClass('hide');
+    }
+    else if(num == 3){
+      jQuery('#third').hide();
+      jQuery('#third').siblings().removeClass('hide');
+    }
+  }
   constructor(private _http: Http, public navCtrl: NavController, public loadingCtrl: LoadingController, public navParams: NavParams, public sanitizer: DomSanitizer) {
     // If we navigated to this page, we will have an item available as a nav param
     // this.selectedItem = navParams.get('item');
-    this.loading = this.loadingCtrl.create({
-              content: 'Please wait..',
-              spinner: 'crescent'
-            });
-    this.loading.present(this.loading);
+    // this.loading = this.loadingCtrl.create({
+    //           content: 'Please wait..',
+    //           spinner: 'crescent'
+    //         });
+    // this.loading.present(this.loading);
     // this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1SURi6PxTX3T5NYNzHMUGF0lp9YJb4oVe8UNAZ3ZX-AU&sheet=Hockey')
     //             .subscribe(res => {
     //               this.hockey = res.json().Hockey;
