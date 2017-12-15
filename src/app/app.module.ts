@@ -27,6 +27,7 @@ import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { MapsPage } from '../pages/maps/maps';
+import {ModalPage} from '../pages/modal/modal';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -41,7 +42,9 @@ import { GoogleMaps } from '../providers/google-maps/google-maps';
 import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
 import { Connectivity } from '../providers/connectivity/connectivity';
 import { VideoPlayer } from '@ionic-native/video-player';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { File } from '@ionic-native/file';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
+    ModalPage,
     GeneralChampionship,
     OLAPedalPage,
   ],
@@ -110,12 +114,17 @@ import { VideoPlayer } from '@ionic-native/video-player';
     SportWaterpolo,
     SportWeightlifting,
     SportAll,
+    ModalPage,
     GeneralChampionship,
     OLAPedalPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
+    File,
+    FileTransfer,
+    FileTransferObject,
     GoogleMaps,
     Connectivity,
     PhotoViewer,

@@ -1,0 +1,59 @@
+page-modal{
+#id1 {
+    height: 100%;
+    width:100%;
+    margin: 0;
+    background-color:black;
+}
+@media screen and (orientation: portrait) {
+  .bg { max-width: 100%; }
+}
+
+@media screen and (orientation: landscape) {
+  .bg { max-height: 100%;
+        width: auto; 
+       }
+}
+ion-icon{
+    z-index: 1;
+    opacity: 1 !important;
+}
+
+.bg {
+    
+    position:absolute;
+    top:0;
+    bottom:0;
+    display: block;
+    margin: auto;
+    width: 100%;
+	height:auto;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.share{
+position:absolute;
+color:white;
+top:2vh;
+left:3vw;
+font-size:30px;
+
+  	}
+ .download{
+position:absolute;
+color:white;
+top:2vh;
+left:20vw;
+font-size:30px;
+
+  	}
+ .close{
+position:absolute;
+color:white;
+top:1.5vh;
+right:3.5vw;
+font-size:45px;
+
+  	}
+
+}
