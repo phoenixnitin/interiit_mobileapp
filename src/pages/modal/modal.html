@@ -3,8 +3,8 @@
    <!-- <ion-icon name="md-download" class="download" (click)="saveimage(ind)"></ion-icon> -->
    <ion-icon name="close" class="close" (click)="closemodal()"></ion-icon>
    <div *ngIf="imageArray">  
-   <div (swiperight)="nextimg()" >
-    <div (swipeleft)="previmg()">
+   <div (swiperight)="previmg()" >
+    <div (swipeleft)="nextimg()">
     <table><tr><td>  
  <img src="{{imageArray[ind].imageURL}}" zooming="true" zoom="true" class="bg"> 
       <!-- <img class="bg" zooming="true" zoom="true" src="{{imageArray[ind].imageURL}}" zoomable> -->
