@@ -66,9 +66,20 @@ hideloader(num){
 
   }
   selectTab(index, event) {
-    this.pageSlider.slideTo(index);
+    // this.pageSlider.slideTo(index);
     jQuery('body > ion-app > ng-component > ion-nav > sport-athletics > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
+    jQuery('#first').show();
+    jQuery('#first').siblings().addClass('hide');
+    if(index == 0){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/displaymatches?tournamentid=5540827736571904');
+    }
+    else if(index == 1){
+      jQuery('iframe').attr('src', 'http://static.interiit.com/pages/athletics_points_table.html');
+    }
+    else if(index == 2){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/displayteamsandplayerslist?tournamentid=5540827736571904&orderingformat=byplayers');
+    }
   }
   changeWillSlide($event) {
     this.tabs = $event._snapIndex.toString();

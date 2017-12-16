@@ -67,9 +67,20 @@ export class SportHockey implements OnDestroy {
 
   }
   selectTab(index, event) {
-    this.pageSlider.slideTo(index);
+    // this.pageSlider.slideTo(index);
     jQuery('body > ion-app > ng-component > ion-nav > sport-hockey > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
+    jQuery('#first').show();
+    jQuery('#first').siblings().addClass('hide');
+    if(index == 0){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/widget_matches?tournamentid=4626982713163776');
+    }
+    else if(index == 1){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/widget_pointstable?tournamentid=4626982713163776');
+    }
+    else if(index == 2){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/displayteamsandplayerslist?tournamentid=4626982713163776&orderingformat=byplayers');
+    }
   }
   changeWillSlide($event) {
     this.tabs = $event._snapIndex.toString();

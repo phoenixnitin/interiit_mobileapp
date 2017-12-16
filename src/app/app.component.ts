@@ -57,7 +57,7 @@ export class MyApp {
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
       { title: 'Maps', component: MapsPage ,icon:'navigate'},
-      { title: 'Take a Ride', component: OLAPedalPage ,icon:'car'},
+      { title: 'Take a Ride', component: OLAPedalPage ,icon:'bicycle'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
     ];

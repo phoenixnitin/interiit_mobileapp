@@ -67,9 +67,20 @@ export class SportWeightlifting implements OnDestroy {
 
   }
   selectTab(index, event) {
-    this.pageSlider.slideTo(index);
+    // this.pageSlider.slideTo(index);
     jQuery('body > ion-app > ng-component > ion-nav > sport-weightlifting > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
+    jQuery('#first').show();
+    jQuery('#first').siblings().addClass('hide');
+    if(index == 0){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/widget_matches?tournamentid=5130853881479168');
+    }
+    else if(index == 1){
+      jQuery('iframe').attr('src', 'http://static.interiit.com/pages/weightlifting_points_table.html');
+    }
+    else if(index == 2){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/displayteamsandplayerslist?tournamentid=5130853881479168&orderingformat=byplayers');
+    }
   }
   changeWillSlide($event) {
     this.tabs = $event._snapIndex.toString();

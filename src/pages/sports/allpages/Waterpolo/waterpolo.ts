@@ -68,10 +68,21 @@ export class SportWaterpolo implements OnDestroy {
 
   }
   selectTab(index, event) {
-    this.pageSlider.slideTo(index);
+    // this.pageSlider.slideTo(index);
     // this.checkOffline();
     jQuery('body > ion-app > ng-component > ion-nav > sport-waterpolo > ion-header > ion-toolbar > div.toolbar-content.toolbar-content-md > ion-segment').children().removeClass('active');
     event.target.classList.add('active');
+    jQuery('#first').show();
+    jQuery('#first').siblings().addClass('hide');
+    if(index == 0){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/widget_matches?tournamentid=5541144758845440');
+    }
+    else if(index == 1){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/widget_pointstable?tournamentid=5541144758845440');
+    }
+    else if(index == 2){
+      jQuery('iframe').attr('src', 'http://indiaatsports.com/displayteamsandplayerslist?tournamentid=5541144758845440&orderingformat=byplayers');
+    }
   }
   // checkOffline(){
   //   if(navigator.onLine == false){
