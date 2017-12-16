@@ -8,6 +8,21 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { SportsPage } from '../pages/sports/sports';
 import { ResultPage } from '../pages/result/result';
 import { SponsorshipPage } from '../pages/sponsorship/sponsorship';
+import {SportAthletics} from '../pages/sports/allpages/Athletics/athletics';
+import {SportBadminton} from '../pages/sports/allpages/Badminton/badminton';
+import {SportBasketball} from '../pages/sports/allpages/Basketball/basketball';
+import {SportCricket} from '../pages/sports/allpages/Cricket/cricket';
+import {SportFootball} from '../pages/sports/allpages/Football/football';
+import {SportHockey} from '../pages/sports/allpages/Hockey/hockey';
+import {SportSquash} from '../pages/sports/allpages/Squash/squash';
+import {SportSwimming} from '../pages/sports/allpages/Swimming/swimming';
+import {SportTableTennis} from '../pages/sports/allpages/Table Tennis/tabletennis';
+import {SportTennis} from '../pages/sports/allpages/Tennis/tennis';
+import {SportVolleyball} from '../pages/sports/allpages/Volleyball/volleyball';
+import {SportWaterpolo} from '../pages/sports/allpages/Waterpolo/waterpolo';
+import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightlifting';
+import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/GeneralChampionship';
+import { SportAll } from '../pages/sports/All_sports/all_sports';
 import {LivePage}from'../pages/live/live';
 import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
@@ -51,6 +66,37 @@ export class MyApp {
   }
 
   initializeApp() {
+    function returnPage(page){
+      switch(page){
+        case 'notifications': {if(that.nav.getActive().name !=='NotificationPage')
+                                  that.nav.push(NotificationPage);
+                                else{
+                                  that.nav.pop(NotificationPage);
+                                  that.nav.push(NotificationPage);
+                                }
+                              }
+        case 'home': {that.nav.push(HomePage);}
+        case 'gallery': {that.nav.push(GalleryPage);}
+        case 'live': {that.nav.push(LivePage);}
+        case 'maps': {that.nav.push(MapsPage);}
+        case 'athletics': {that.nav.push(SportAthletics);}
+        case 'badminton': {that.nav.push(SportBadminton);}
+        case 'basketball': {that.nav.push(SportBasketball);}
+        case 'cricket': {that.nav.push(SportCricket);}
+        case 'football': {that.nav.push(SportFootball);}
+        case 'hockey': {that.nav.push(SportHockey);}
+        case 'squash': {that.nav.push(SportSquash);}
+        case 'swimming': {that.nav.push(SportSwimming);}
+        case 'tabletennis': {that.nav.push(SportTableTennis);}
+        case 'tennis': {that.nav.push(SportTennis);}
+        case 'volleyball': {that.nav.push(SportVolleyball);}
+        case 'waterpolo': {that.nav.push(SportWaterpolo);}
+        case 'weightlifting': {that.nav.push(SportWeightlifting);}
+        case 'gc': {that.nav.push(GeneralChampionship);}
+        case 'play': {window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
+
+      }
+    }
     var that = this;
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -72,13 +118,9 @@ export class MyApp {
             // Background recieval (Even if app is closed),
             //   bring up the message in UI
             console.log('notification tapped');
-            if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
-            else if(that.nav.getActive().name !=='NotificationPage')
-              that.nav.push(NotificationPage);
-            else{
-              that.nav.pop(NotificationPage);
-              that.nav.push(NotificationPage);
-            }
+            returnPage(d.page);
+            // if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
+            
           } else {
             // Foreground recieval, update UI or what have you...
             console.log('notification tapped:else : older');
@@ -97,15 +139,11 @@ export class MyApp {
               text: 'Go me there.',
               handler: () => {
                 console.log(that.nav.getActive().name);
-                if(d.page === 'home')
-                  that.nav.push(HomePage);
-                else if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
-                else if(that.nav.getActive().name !=='NotificationPage')
-                  that.nav.push(NotificationPage);
-                else{
-                  that.nav.pop(NotificationPage);
-                  that.nav.push(NotificationPage);
-                }
+                returnPage(d.page);
+                // if(d.page === 'home')
+                //   that.nav.push(HomePage);
+                // else if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
+                
                 console.log('Notification clicked');
               }
             }
@@ -210,4 +248,6 @@ export class MyApp {
         });
     alert.present();
   }
+
+  
 }
