@@ -19,6 +19,10 @@ page-gallery {
         //padding: 5px;
         min-height: 0px;
     }
+    .each-video{
+      min-width: 320px;
+      margin: auto;
+    }
     #title{
         position: relative;
         text-align: center;
@@ -35,7 +39,8 @@ page-gallery {
         position: relative;
         padding-top: 0px;
         padding-bottom: 0px;
-        width: 100%;
+        width: fit-content;
+        margin: auto;
         height: 100%;
     }
     #offline{
@@ -43,7 +48,7 @@ page-gallery {
         text-decoration-color: black;
     }
   iframe{
-    width: inherit;
+    width: 100%;
   }
 
 

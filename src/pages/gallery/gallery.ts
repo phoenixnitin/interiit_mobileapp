@@ -52,7 +52,7 @@ export class GalleryPage implements OnInit, OnDestroy{
 
   }
   openmodal(ind){
-    let modal = this.modalController.create(ModalPage,{'ind':ind});
+    let modal = this.modalController.create(ModalPage,{'ind':ind,'imageCounter':this.imageCounter});
     modal.present();
     console.log(ind);
   }
@@ -86,6 +86,9 @@ export class GalleryPage implements OnInit, OnDestroy{
     this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1YmVNuBSrq58PZRdxNu1-epOBB3osCaMXnYU54vgzfAI&sheet=Video')
     .subscribe(res => {
      this.data = res.json().Video;
+     if(this.data.length < this.videoCounter){
+        this.showVideoClick = false;
+     }
     this.hideLoading();
     func();
     });
@@ -159,8 +162,8 @@ export class GalleryPage implements OnInit, OnDestroy{
       hideLoading1(){
         setTimeout(() => {
           this.loading.dismiss();
-        },1000);   
-      } 
+        },1000);
+      }
       geturl(id,index){
       if(this.c<index){
       this.c= index;
