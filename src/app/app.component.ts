@@ -65,8 +65,8 @@ export class MyApp {
 
   }
 
-  initializeApp() {
-    function returnPage(page){
+  returnPage(page){
+    let that = this;
       switch(page){
         case 'NotificationPage': {if(that.nav.getActive().name !=='NotificationPage')
           that.nav.push(NotificationPage);
@@ -74,137 +74,169 @@ export class MyApp {
             that.nav.pop(NotificationPage);
             that.nav.push(NotificationPage);
         }
-                              }
+                              }break;
         case 'HomePage': {if(that.nav.getActive().name !=='HomePage')
         that.nav.push(HomePage);
       else{
         that.nav.pop(HomePage);
         that.nav.push(HomePage);
     }
-  }
+  }break;
         case 'GalleryPage': {if(that.nav.getActive().name !=='GalleryPage')
         that.nav.push(GalleryPage);
       else{
         that.nav.pop(GalleryPage);
         that.nav.push(GalleryPage);
     }
-  }
+  }break;
+        case 'SportsPage': {if(that.nav.getActive().name !=='SportsPage')
+        that.nav.push(SportsPage);
+      else{
+        that.nav.pop(SportsPage);
+        that.nav.push(SportsPage);
+    }
+  }break;
         case 'LivePage': {if(that.nav.getActive().name !=='LivePage')
         that.nav.push(LivePage);
       else{
         that.nav.pop(LivePage);
         that.nav.push(LivePage);
     }
-  }
+  }break;
         case 'MapsPage': {if(that.nav.getActive().name !=='MapsPage')
         that.nav.push(MapsPage);
       else{
         that.nav.pop(MapsPage);
         that.nav.push(MapsPage);
     }
-  }
+  }break;
+        case 'OLAPedalPage': {if(that.nav.getActive().name !=='OLAPedalPage')
+        that.nav.push(OLAPedalPage);
+      else{
+        that.nav.pop(OLAPedalPage);
+        that.nav.push(OLAPedalPage);
+    }
+  }break;
+        case 'ContactUsPage': {if(that.nav.getActive().name !=='ContactUsPage')
+        that.nav.push(ContactUsPage);
+      else{
+        that.nav.pop(ContactUsPage);
+        that.nav.push(ContactUsPage);
+    }
+  }break;
         case 'SportAthletics': {if(that.nav.getActive().name !=='SportAthletics')
         that.nav.push(SportAthletics);
       else{
         that.nav.pop(SportAthletics);
         that.nav.push(SportAthletics);
     }
-  }
+  }break;
         case 'SportBadminton': {if(that.nav.getActive().name !=='SportBadminton')
         that.nav.push(SportBadminton);
       else{
         that.nav.pop(SportBadminton);
         that.nav.push(SportBadminton);
     }
-  }
+  }break;
         case 'SportBasketball': {if(that.nav.getActive().name !=='SportBasketball')
         that.nav.push(SportBasketball);
       else{
         that.nav.pop(SportBasketball);
         that.nav.push(SportBasketball);
     }
-  }
+  }break;
         case 'SportCricket': {if(that.nav.getActive().name !=='SportCricket')
         that.nav.push(SportCricket);
       else{
         that.nav.pop(SportCricket);
         that.nav.push(SportCricket);
     }
-  }
+  }break;
         case 'SportFootball': {if(that.nav.getActive().name !=='SportFootball')
         that.nav.push(SportFootball);
       else{
         that.nav.pop(SportFootball);
         that.nav.push(SportFootball);
     }
-  }
+  }break;
         case 'SportHockey': {if(that.nav.getActive().name !=='SportHockey')
         that.nav.push(SportHockey);
       else{
         that.nav.pop(SportHockey);
         that.nav.push(SportHockey);
     }
-  }
+  }break;
         case 'SportSquash': {if(that.nav.getActive().name !=='SportSquash')
         that.nav.push(SportSquash);
       else{
         that.nav.pop(SportSquash);
         that.nav.push(SportSquash);
     }
-  }
+  }break;
         case 'SportSwimming': {if(that.nav.getActive().name !=='SportSwimming')
         that.nav.push(SportSwimming);
       else{
         that.nav.pop(SportSwimming);
         that.nav.push(SportSwimming);
     }
-  }
+  }break;
         case 'SportTableTennis': {if(that.nav.getActive().name !=='SportTableTennis')
         that.nav.push(SportTableTennis);
       else{
         that.nav.pop(SportTableTennis);
         that.nav.push(SportTableTennis);
     }
-  }
+  }break;
         case 'SportTennis': {if(that.nav.getActive().name !=='SportTennis')
         that.nav.push(SportTennis);
       else{
         that.nav.pop(SportTennis);
         that.nav.push(SportTennis);
     }
-  }
+  }break;
         case 'SportVolleyball': {if(that.nav.getActive().name !=='SportVolleyball')
         that.nav.push(SportVolleyball);
       else{
         that.nav.pop(SportVolleyball);
         that.nav.push(SportVolleyball);
     }
-  }
+  }break;
         case 'SportWaterpolo': {if(that.nav.getActive().name !=='SportWaterpolo')
         that.nav.push(SportWaterpolo);
       else{
         that.nav.pop(SportWaterpolo);
         that.nav.push(SportWaterpolo);
     }
-  }
+  }break;
         case 'SportWeightlifting': {if(that.nav.getActive().name !=='SportWeightlifting')
         that.nav.push(SportWeightlifting);
       else{
         that.nav.pop(SportWeightlifting);
         that.nav.push(SportWeightlifting);
     }
-  }
+  }break;
         case 'GeneralChampionship': {if(that.nav.getActive().name !=='GeneralChampionship')
         that.nav.push(GeneralChampionship);
       else{
         that.nav.pop(GeneralChampionship);
         that.nav.push(GeneralChampionship);
     }
-  }
-        case 'play': {window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
-
+  }break;
+        case 'FanmodePage': {if(that.nav.getActive().name !=='FanmodePage'){
+        // that.nav.push(FanmodePage);
+          }
+      else{
+        // that.nav.pop(FanmodePage);
+        // that.nav.push(FanmodePage);
+    }
+  }break;
+        case 'play': {window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}break;
+        default : that.nav.push(NotificationPage);
       }
     }
+
+  initializeApp() {
+
     var that = this;
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -226,9 +258,9 @@ export class MyApp {
             // Background recieval (Even if app is closed),
             //   bring up the message in UI
             console.log('notification tapped');
-            returnPage(d.page);
+            that.returnPage(d.page);
             // if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
-            
+
           } else {
             // Foreground recieval, update UI or what have you...
             console.log('notification tapped:else : older');
@@ -244,14 +276,14 @@ export class MyApp {
               }
             },
             {
-              text: 'Go me there.',
+              text: 'Take me there',
               handler: () => {
                 console.log(that.nav.getActive().name);
-                returnPage(d.page);
+                that.returnPage(d.page);
                 // if(d.page === 'home')
                 //   that.nav.push(HomePage);
                 // else if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
-                
+
                 console.log('Notification clicked');
               }
             }
@@ -291,7 +323,7 @@ export class MyApp {
        windows: {}
     };
     const pushObject: PushObject = this.push.init(options);
-
+    let that = this;
     pushObject.on('notification').subscribe((notification: any) => {
       if (notification.additionalData.foreground) {
         let youralert = this.alertCtrl.create({
@@ -306,15 +338,16 @@ export class MyApp {
               }
             },
             {
-              text: 'Go to Notifications',
+              text: 'Take me there',
               handler: () => {
                 console.log(this.nav.getActive().name);
-                if(this.nav.getActive().name !=='NotificationPage')
-                  this.nav.push(NotificationPage);
-                else{
-                  this.nav.pop(NotificationPage);
-                  this.nav.push(NotificationPage);
-                }
+                // if(this.nav.getActive().name !=='NotificationPage')
+                //   this.nav.push(NotificationPage);
+                // else{
+                //   this.nav.pop(NotificationPage);
+                //   this.nav.push(NotificationPage);
+                // }
+                that.returnPage(notification.page);
                 console.log('Notification clicked');
               }
             }
@@ -357,5 +390,5 @@ export class MyApp {
     alert.present();
   }
 
-  
+
 }
