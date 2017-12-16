@@ -68,31 +68,139 @@ export class MyApp {
   initializeApp() {
     function returnPage(page){
       switch(page){
-        case 'notifications': {if(that.nav.getActive().name !=='NotificationPage')
-                                  that.nav.push(NotificationPage);
-                                else{
-                                  that.nav.pop(NotificationPage);
-                                  that.nav.push(NotificationPage);
-                                }
+        case 'NotificationPage': {if(that.nav.getActive().name !=='NotificationPage')
+          that.nav.push(NotificationPage);
+          else{
+            that.nav.pop(NotificationPage);
+            that.nav.push(NotificationPage);
+        }
                               }
-        case 'home': {that.nav.push(HomePage);}
-        case 'gallery': {that.nav.push(GalleryPage);}
-        case 'live': {that.nav.push(LivePage);}
-        case 'maps': {that.nav.push(MapsPage);}
-        case 'athletics': {that.nav.push(SportAthletics);}
-        case 'badminton': {that.nav.push(SportBadminton);}
-        case 'basketball': {that.nav.push(SportBasketball);}
-        case 'cricket': {that.nav.push(SportCricket);}
-        case 'football': {that.nav.push(SportFootball);}
-        case 'hockey': {that.nav.push(SportHockey);}
-        case 'squash': {that.nav.push(SportSquash);}
-        case 'swimming': {that.nav.push(SportSwimming);}
-        case 'tabletennis': {that.nav.push(SportTableTennis);}
-        case 'tennis': {that.nav.push(SportTennis);}
-        case 'volleyball': {that.nav.push(SportVolleyball);}
-        case 'waterpolo': {that.nav.push(SportWaterpolo);}
-        case 'weightlifting': {that.nav.push(SportWeightlifting);}
-        case 'gc': {that.nav.push(GeneralChampionship);}
+        case 'HomePage': {if(that.nav.getActive().name !=='HomePage')
+        that.nav.push(HomePage);
+      else{
+        that.nav.pop(HomePage);
+        that.nav.push(HomePage);
+    }
+  }
+        case 'GalleryPage': {if(that.nav.getActive().name !=='GalleryPage')
+        that.nav.push(GalleryPage);
+      else{
+        that.nav.pop(GalleryPage);
+        that.nav.push(GalleryPage);
+    }
+  }
+        case 'LivePage': {if(that.nav.getActive().name !=='LivePage')
+        that.nav.push(LivePage);
+      else{
+        that.nav.pop(LivePage);
+        that.nav.push(LivePage);
+    }
+  }
+        case 'MapsPage': {if(that.nav.getActive().name !=='MapsPage')
+        that.nav.push(MapsPage);
+      else{
+        that.nav.pop(MapsPage);
+        that.nav.push(MapsPage);
+    }
+  }
+        case 'SportAthletics': {if(that.nav.getActive().name !=='SportAthletics')
+        that.nav.push(SportAthletics);
+      else{
+        that.nav.pop(SportAthletics);
+        that.nav.push(SportAthletics);
+    }
+  }
+        case 'SportBadminton': {if(that.nav.getActive().name !=='SportBadminton')
+        that.nav.push(SportBadminton);
+      else{
+        that.nav.pop(SportBadminton);
+        that.nav.push(SportBadminton);
+    }
+  }
+        case 'SportBasketball': {if(that.nav.getActive().name !=='SportBasketball')
+        that.nav.push(SportBasketball);
+      else{
+        that.nav.pop(SportBasketball);
+        that.nav.push(SportBasketball);
+    }
+  }
+        case 'SportCricket': {if(that.nav.getActive().name !=='SportCricket')
+        that.nav.push(SportCricket);
+      else{
+        that.nav.pop(SportCricket);
+        that.nav.push(SportCricket);
+    }
+  }
+        case 'SportFootball': {if(that.nav.getActive().name !=='SportFootball')
+        that.nav.push(SportFootball);
+      else{
+        that.nav.pop(SportFootball);
+        that.nav.push(SportFootball);
+    }
+  }
+        case 'SportHockey': {if(that.nav.getActive().name !=='SportHockey')
+        that.nav.push(SportHockey);
+      else{
+        that.nav.pop(SportHockey);
+        that.nav.push(SportHockey);
+    }
+  }
+        case 'SportSquash': {if(that.nav.getActive().name !=='SportSquash')
+        that.nav.push(SportSquash);
+      else{
+        that.nav.pop(SportSquash);
+        that.nav.push(SportSquash);
+    }
+  }
+        case 'SportSwimming': {if(that.nav.getActive().name !=='SportSwimming')
+        that.nav.push(SportSwimming);
+      else{
+        that.nav.pop(SportSwimming);
+        that.nav.push(SportSwimming);
+    }
+  }
+        case 'SportTableTennis': {if(that.nav.getActive().name !=='SportTableTennis')
+        that.nav.push(SportTableTennis);
+      else{
+        that.nav.pop(SportTableTennis);
+        that.nav.push(SportTableTennis);
+    }
+  }
+        case 'SportTennis': {if(that.nav.getActive().name !=='SportTennis')
+        that.nav.push(SportTennis);
+      else{
+        that.nav.pop(SportTennis);
+        that.nav.push(SportTennis);
+    }
+  }
+        case 'SportVolleyball': {if(that.nav.getActive().name !=='SportVolleyball')
+        that.nav.push(SportVolleyball);
+      else{
+        that.nav.pop(SportVolleyball);
+        that.nav.push(SportVolleyball);
+    }
+  }
+        case 'SportWaterpolo': {if(that.nav.getActive().name !=='SportWaterpolo')
+        that.nav.push(SportWaterpolo);
+      else{
+        that.nav.pop(SportWaterpolo);
+        that.nav.push(SportWaterpolo);
+    }
+  }
+        case 'SportWeightlifting': {if(that.nav.getActive().name !=='SportWeightlifting')
+        that.nav.push(SportWeightlifting);
+      else{
+        that.nav.pop(SportWeightlifting);
+        that.nav.push(SportWeightlifting);
+    }
+  }
+        case 'GeneralChampionship': {if(that.nav.getActive().name !=='GeneralChampionship')
+        that.nav.push(GeneralChampionship);
+      else{
+        that.nav.pop(GeneralChampionship);
+        that.nav.push(GeneralChampionship);
+    }
+  }
         case 'play': {window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
 
       }
