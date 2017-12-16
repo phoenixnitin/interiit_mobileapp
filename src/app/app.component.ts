@@ -72,7 +72,8 @@ export class MyApp {
             // Background recieval (Even if app is closed),
             //   bring up the message in UI
             console.log('notification tapped');
-            if(that.nav.getActive().name !=='NotificationPage')
+            if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
+            else if(that.nav.getActive().name !=='NotificationPage')
               that.nav.push(NotificationPage);
             else{
               that.nav.pop(NotificationPage);
@@ -80,7 +81,37 @@ export class MyApp {
             }
           } else {
             // Foreground recieval, update UI or what have you...
-            console.log('notification tapped:else');
+            console.log('notification tapped:else : older');
+            let youralert = that.alertCtrl.create({
+          title: 'Notification',
+          message: d.message,
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            },
+            {
+              text: 'Go me there.',
+              handler: () => {
+                console.log(that.nav.getActive().name);
+                if(d.page === 'home')
+                  that.nav.push(HomePage);
+                else if (d.page == 'play'){window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}
+                else if(that.nav.getActive().name !=='NotificationPage')
+                  that.nav.push(NotificationPage);
+                else{
+                  that.nav.pop(NotificationPage);
+                  that.nav.push(NotificationPage);
+                }
+                console.log('Notification clicked');
+              }
+            }
+          ]
+        });
+        youralert.present();
           }
         }, function(msg){
           // No problemo, registered callback
