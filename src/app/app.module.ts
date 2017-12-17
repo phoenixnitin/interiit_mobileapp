@@ -39,9 +39,6 @@ import {FanmodePage} from '../pages/fanmode/fanmode';
 //import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
 import { Youtube } from '../pipes/youtube/youtube';
-import { GoogleMaps } from '../providers/google-maps/google-maps';
-import { GoogleMapsCluster } from '../providers/google-maps-cluster/google-maps-cluster';
-import { Connectivity } from '../providers/connectivity/connectivity';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { File } from '@ionic-native/file';
@@ -128,12 +125,9 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     File,
     FileTransfer,
     FileTransferObject,
-    GoogleMaps,
-    Connectivity,
     PhotoViewer,
     VideoPlayer,
     YoutubeVideoPlayer,
-    GoogleMapsCluster,
     Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
