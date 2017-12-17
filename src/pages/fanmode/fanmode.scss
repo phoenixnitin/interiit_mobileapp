@@ -1,0 +1,35 @@
+page-fanmode{
+  ion-content{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../assets/background/background1.jpg");
+    background-size: cover;
+    background-position: center;
+
+  }
+    .p{
+        //
+
+        text-align: center;
+        h6{
+          color: white;
+          margin: 0;
+        }
+    }
+  .each-button{
+    text-align: center;
+    //width: 100%;
+    padding: 10px;
+    button:first-child{
+      width: calc(100% - 85px);
+      font-size: 20px !important;
+      max-width: 300px;
+      min-width: fit-content;
+      height:62px;
+    }
+    button:focus{
+      outline: 0px;
+    }
+    img{
+      height:48px;
+    }
+  }
+}

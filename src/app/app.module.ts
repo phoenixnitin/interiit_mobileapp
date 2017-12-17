@@ -34,6 +34,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push} from '@ionic-native/push';
 import {OLAPedalPage} from '../pages/ola/ola';
+import {FanmodePage} from '../pages/fanmode/fanmode';
 
 //import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {PhotoViewer} from '@ionic-native/photo-viewer';
@@ -77,6 +78,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     ModalPage,
     GeneralChampionship,
     OLAPedalPage,
+    FanmodePage
   ],
   imports: [
     BrowserModule,
@@ -117,6 +119,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     ModalPage,
     GeneralChampionship,
     OLAPedalPage,
+    FanmodePage,
   ],
   providers: [
     StatusBar,

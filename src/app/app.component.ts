@@ -28,6 +28,7 @@ import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { OLAPedalPage } from '../pages/ola/ola';
+import { FanmodePage } from '../pages/fanmode/fanmode';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 declare var FCMPlugin;
 
@@ -56,6 +57,7 @@ export class MyApp {
       { title: 'Sports', component: SportsPage ,icon:'american-football' },
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
+      { title: 'Fanmode', component: FanmodePage, icon:'md-wifi'},
       { title: 'Maps', component: MapsPage ,icon:'navigate'},
       { title: 'Take a Ride', component: OLAPedalPage ,icon:'bicycle'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
@@ -223,11 +225,11 @@ export class MyApp {
     }
   }break;
         case 'FanmodePage': {if(that.nav.getActive().name !=='FanmodePage'){
-        // that.nav.push(FanmodePage);
+        that.nav.push(FanmodePage);
           }
       else{
-        // that.nav.pop(FanmodePage);
-        // that.nav.push(FanmodePage);
+        that.nav.pop(FanmodePage);
+        that.nav.push(FanmodePage);
     }
   }break;
         case 'play': {window.location.href="https://play.google.com/store/apps/details?id=com.interiit.android"}break;
