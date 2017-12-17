@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Select Your Destination
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item *ngFor="let marker of markers" (click)="gomaps(marker.lat,marker.lng,marker.title)">
+      {{marker.title}}
+    </button> 
+    <!--<button ion-item (click)="gomaps()">
+      Central Library
+    </button> -->
+  </ion-list>
+</ion-content>
