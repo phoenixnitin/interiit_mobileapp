@@ -24,6 +24,7 @@ import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightl
 import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/GeneralChampionship';
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import {LivePage}from'../pages/live/live';
+import { MapsHomePage } from '../pages/mapshome/mapshome';
 import { MapsPage } from '../pages/maps/maps';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -58,7 +59,7 @@ export class MyApp {
       // { title: 'Results', component: ResultPage ,icon:'home' },
       { title: 'Live', component:LivePage ,icon:'logo-youtube' },
       { title: 'Fanmode', component: FanmodePage, icon:'md-wifi'},
-      { title: 'Maps', component: MapsPage ,icon:'navigate'},
+      { title: 'Navigation', component: MapsHomePage ,icon:'navigate'},
       { title: 'Take a Ride', component: OLAPedalPage ,icon:'bicycle'},
       { title: 'Contact Us', component: ContactUsPage ,icon:'contacts'},
       { title: 'Notification', component: NotificationPage, icon:'md-notifications'}
@@ -103,6 +104,13 @@ export class MyApp {
       else{
         that.nav.pop(LivePage);
         that.nav.push(LivePage);
+    }
+  }break;
+        case 'MapsHomePage': {if(that.nav.getActive().name !=='MapsHomePage')
+        that.nav.push(MapsHomePage);
+      else{
+        that.nav.pop(MapsHomePage);
+        that.nav.push(MapsHomePage);
     }
   }break;
         case 'MapsPage': {if(that.nav.getActive().name !=='MapsPage')

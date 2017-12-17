@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {LivePage} from '../pages/live/live';
@@ -26,6 +27,7 @@ import {SportWeightlifting} from '../pages/sports/allpages/Weightlifting/weightl
 import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/GeneralChampionship';
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import {MapsHomePage} from '../pages/mapshome/mapshome';
 import { MapsPage } from '../pages/maps/maps';
 import {ModalPage} from '../pages/modal/modal';
 import { ContactUsPage } from '../pages/contactus/contactus';
@@ -43,6 +45,8 @@ import { VideoPlayer } from '@ionic-native/video-player';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import {Geolocation} from '@ionic-native/geolocation';
+import {Diagnostic} from '@ionic-native/diagnostic';
 
 @NgModule({
   declarations: [
@@ -54,6 +58,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     SportsPage,
     ResultPage,
     SponsorshipPage,
+    MapsHomePage,
     MapsPage,
     ContactUsPage,
     Youtube,
@@ -95,8 +100,8 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     SportsPage,
     ResultPage,
     SponsorshipPage,
+    MapsHomePage,
     MapsPage,
-
     ContactUsPage,
     NotificationPage,
     SportAthletics,
@@ -129,6 +134,8 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     VideoPlayer,
     YoutubeVideoPlayer,
     Push,
+    Diagnostic,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 
