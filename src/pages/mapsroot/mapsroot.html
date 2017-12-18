@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Take a Ride</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<h3>You are at Notification page</h3>-->
+  <div class="container">
+    <div class="col-xs-12" style="text-align: center">
+      <br>
+      <button (click)="loadFreeRoam()" class="col-xs-12 btn btn-success btn-lg">Free Roam</button>
+    </div>
+    <div class="col-xs-12" style="text-align: center">
+      <br>
+      <button (click)="loadDestination()" class="col-xs-12 btn btn-success btn-lg">Select Destination</button>
+    </div>
+  </div>
+</ion-content>

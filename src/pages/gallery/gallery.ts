@@ -8,11 +8,14 @@ import {SafeResourceUrl,DomSanitizer} from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import *  as jQuery from 'jquery';
 import { ModalPage } from '../modal/modal';
+
 declare global {
   interface Window {
     onYouTubeIframeAPIReady?: () => void;
   }
 }
+
+declare var YT
 
 @Component({
   selector: 'page-gallery',
