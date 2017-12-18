@@ -29,6 +29,7 @@ import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
 import { OLAPedalPage } from '../pages/ola/ola';
 import { FanmodePage } from '../pages/fanmode/fanmode';
+import { TodayEvent } from '../pages/sports/allpages/today-event/today-event';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 declare var FCMPlugin;
 
@@ -222,6 +223,13 @@ export class MyApp {
       else{
         that.nav.pop(GeneralChampionship);
         that.nav.push(GeneralChampionship);
+    }
+  }break;
+        case 'TodayEvent': {if(that.nav.getActive().name !=='TodayEvent')
+        that.nav.push(TodayEvent);
+      else{
+        that.nav.pop(TodayEvent);
+        that.nav.push(TodayEvent);
     }
   }break;
         case 'FanmodePage': {if(that.nav.getActive().name !=='FanmodePage'){

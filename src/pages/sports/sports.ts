@@ -15,6 +15,7 @@ import {SportVolleyball} from '../sports/allpages/Volleyball/volleyball';
 import {SportWaterpolo} from '../sports/allpages/Waterpolo/waterpolo';
 import {SportWeightlifting} from '../sports/allpages/Weightlifting/weightlifting';
 import {GeneralChampionship} from '../sports/allpages/GeneralChampionship/GeneralChampionship';
+import {TodayEvent} from '../sports/allpages/today-event/today-event';
 
 @Component({
   selector: 'page-sports',
@@ -52,6 +53,7 @@ itemSelected(item){
       else if (item === 'Waterpolo'){this.navCtrl.push(SportWaterpolo);}
       else if (item === 'Weightlifting'){this.navCtrl.push(SportWeightlifting);}
       else if (item === 'GeneralChampionship'){this.navCtrl.push(GeneralChampionship);}
+      else if (item === 'today-matches'){this.navCtrl.push(TodayEvent);}
 
     }
   else{

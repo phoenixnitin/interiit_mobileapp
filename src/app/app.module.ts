@@ -46,6 +46,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { TodayEvent } from '../pages/sports/allpages/today-event/today-event';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     ModalPage,
     GeneralChampionship,
     OLAPedalPage,
-    FanmodePage
+    FanmodePage,
+    TodayEvent,
   ],
   imports: [
     BrowserModule,
@@ -120,6 +122,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     GeneralChampionship,
     OLAPedalPage,
     FanmodePage,
+    TodayEvent,
   ],
   providers: [
     StatusBar,
