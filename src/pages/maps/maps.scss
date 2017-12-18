@@ -5,16 +5,65 @@ page-map {
 
   #map {
     width: 100%;
-    height: calc(100% - 120px);
+    height: 90%;
   }
-  #overlay{
-    position: relative;
-    height: 120px;
+
+  .hideScrollBar{
+    overflow-y: hidden !important ;
+  }
+
+  ion-card {
+    max-height: 180px;
+    width: 100%;
+    margin: 0px;
     overflow: scroll;
-    border-bottom: 1px solid #ddd;
-  .list-group-item{
-    color: #fff;
-    background-color: #283e6a;
+    position: absolute;
+    z-index: 1;
+    background-color: darkblue;
   }
+
+  .card-content-md {
+    padding: 0px 5px;
   }
+
+  div::-webkit-scrollbar {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  div::-webkit-scrollbar-track {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  div::-webkit-scrollbar-thumb {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  ion-card::-webkit-scrollbar {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  ion-card::-webkit-scrollbar-track {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  ion-card::-webkit-scrollbar-thumb {
+    border:none;
+    width:0;
+    background: rgba(0,0,0,0);
+  }
+
+  .toolbar-title-md{
+    padding-left: 0px;
+  }
+
 }

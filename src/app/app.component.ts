@@ -25,7 +25,7 @@ import {GeneralChampionship} from '../pages/sports/allpages/GeneralChampionship/
 import { SportAll } from '../pages/sports/All_sports/all_sports';
 import {LivePage}from'../pages/live/live';
 import { MapsHomePage } from '../pages/mapshome/mapshome';
-import { MapsPage } from '../pages/maps/maps';
+import { MapsFreeRoam } from '../pages/mapsfreeroam/mapsfreeroam';
 import { MapsRoot } from '../pages/mapsroot/mapsroot';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -115,11 +115,18 @@ export class MyApp {
         that.nav.push(MapsHomePage);
     }
   }break;
-        case 'MapsPage': {if(that.nav.getActive().name !=='MapsPage')
-        that.nav.push(MapsPage);
+        case 'MapsFreeRoam': {if(that.nav.getActive().name !=='MapsFreeRoam')
+        that.nav.push(MapsFreeRoam);
       else{
-        that.nav.pop(MapsPage);
-        that.nav.push(MapsPage);
+        that.nav.pop(MapsFreeRoam);
+        that.nav.push(MapsFreeRoam);
+    }
+  }break;
+        case 'MapsRoot': {if(that.nav.getActive().name !=='MapsRoot')
+        that.nav.push(MapsRoot);
+      else{
+        that.nav.pop(MapsRoot);
+        that.nav.push(MapsRoot);
     }
   }break;
         case 'OLAPedalPage': {if(that.nav.getActive().name !=='OLAPedalPage')

@@ -29,6 +29,7 @@ import { SportAll } from '../pages/sports/All_sports/all_sports';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import {MapsHomePage} from '../pages/mapshome/mapshome';
 import { MapsPage } from '../pages/maps/maps';
+import { MapsFreeRoam } from '../pages/mapsfreeroam/mapsfreeroam';
 import {ModalPage} from '../pages/modal/modal';
 import { ContactUsPage } from '../pages/contactus/contactus';
 import { NotificationPage } from '../pages/notification/notification';
@@ -62,6 +63,7 @@ import {Diagnostic} from '@ionic-native/diagnostic';
     SponsorshipPage,
     MapsHomePage,
     MapsPage,
+    MapsFreeRoam,
     MapsRoot,
     ContactUsPage,
     Youtube,
@@ -106,6 +108,7 @@ import {Diagnostic} from '@ionic-native/diagnostic';
     SponsorshipPage,
     MapsHomePage,
     MapsPage,
+    MapsFreeRoam,
     MapsRoot,
     ContactUsPage,
     NotificationPage,

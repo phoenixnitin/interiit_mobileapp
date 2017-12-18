@@ -1,15 +1,19 @@
 <ion-header>
-    <ion-navbar color="secondary">
-        <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-      <ion-title>
-        Map
-      </ion-title>
-    </ion-navbar>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Directions to {{title}}
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <div id="overlay"></div>
-  <div #mapContainer id="map"></div>
+<ion-content class="hideScrollBar">
+
+ <ion-card>
+    <ion-card-content nopadding>
+      <div #directionsPanel></div>
+    </ion-card-content>
+  </ion-card>
+
+ <div #mapContainer id="map"></div>
+
 </ion-content>

@@ -40,6 +40,7 @@
         "com.moust.cordova.videoplayer": "https://github.com/moust/cordova-plugin-videoplayer.git",
         "cordova-android": "^6.3.0",
         "cordova-plugin-backbutton": "^0.3.0",
+        "cordova-plugin-crashlytics": "^1.0.0",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-fcm": "~2.1.2",
         "cordova-plugin-file": "^5.0.0",

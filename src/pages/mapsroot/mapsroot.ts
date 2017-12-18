@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
-import { MapsPage } from '../maps/maps';
+import { MapsFreeRoam } from '../mapsfreeroam/mapsfreeroam';
 import { MapsHomePage } from '../mapshome/mapshome';
 
 @Component({
@@ -14,7 +14,7 @@ export class MapsRoot implements OnDestroy{
 
   }
   loadFreeRoam(){
-    this.navCtrl.push(MapsPage);
+    this.navCtrl.push(MapsFreeRoam);
   }
   loadDestination(){
     this.navCtrl.push(MapsHomePage);

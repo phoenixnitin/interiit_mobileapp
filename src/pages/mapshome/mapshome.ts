@@ -15,7 +15,7 @@ markers : [{}];
 
 geoLocationOption : GeolocationOptions = {
   enableHighAccuracy: true
-}
+};
 
   constructor(private diagnostic: Diagnostic,
               private platform: Platform,
@@ -31,37 +31,46 @@ geoLocationOption : GeolocationOptions = {
       // this.geolocation.getCurrentPosition(this.geoLocationOption).then((Available) => {
       //   console.log("Location is Available");
       // }).catch((err) => {
-      //   this.TurnOnGpsAlert();
+        this.TurnOnGpsAlert();
       // });
-      this.TurnOnGpsAlert();
     })
   }
-
+  // checkGPS(){
+  //   this.diagnostic.isLocationEnabled().then(
+  //       (success)=>{
+  //         this.diagnostic.isGpsLocationEnabled().then((done)=>{
+  //           this.diagnostic.isGpsLocationAvailable().catch((e)=>{this.TurnOnGpsAlert();});
+  //         }, (err)=>{this.TurnOnGpsAlert();})
+  //       }
+  //     ).catch(
+  //       (error)=>{
+  //         console.log(error);
+  //         this.TurnOnGpsAlert();
+  //       });
+  // }
 
   TurnOnGpsAlert(){
-    this.geolocation.getCurrentPosition().then().catch((error)=>{
-      console.log(error);
-      let turnOnGpsAlert = this.alertCtrl.create({
-        title: 'GPS is Turned Off!!',
-        message: "For best results, let your device turn on location, which uses Google's location service.",
-        buttons:[
-          {
-            text:'Cancel',
-            handler: () => {
-              console.log('GPS not Enabled');
-            }
-          },
-          {
-            text:'Turn On GPS',
-            handler: () => {
-              this.diagnostic.switchToLocationSettings();
-            }
+    let turnOnGpsAlert = this.alertCtrl.create({
+      title: 'GPS is Required',
+      message: "For best results, let your device turn on location, which uses Google's location service.",
+      buttons:[
+        {
+          text:'Skip, Already ON',
+          handler: () => {
+            console.log('GPS not Enabled');
           }
-        ]
+        },
+        {
+          text:'Turn On GPS',
+          handler: () => {
+            this.diagnostic.switchToLocationSettings();
+            // this.checkGPS();
+          }
+        }
+      ]
 
-      });
-      turnOnGpsAlert.present();
     });
+    turnOnGpsAlert.present();
   }
 
   getmarkers(){
