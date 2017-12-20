@@ -43,7 +43,9 @@ export class MyApp {
 
   rootPage: any = HomePage;
   activePage: any;
+  alert: any;
   pages: Array<{title: string, component: any, icon:string}>;
+  alertStatus = false;
   private resetBackButton: any;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public push: Push, public alertCtrl: AlertController) {
@@ -269,7 +271,15 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       setTimeout(()=>{this.splashScreen.hide();}, 100);
-
+      this.platform.registerBackButtonAction(()=>{
+        if(that.nav.getActive().name !=='HomePage'){
+          that.nav.pop();
+          // that.activePage = that.nav.getActive();
+        }
+        else{
+          that.exitApp();
+        }
+      });
       this.pushsetup();
        if(typeof(FCMPlugin) !== "undefined"){
         FCMPlugin.getToken(function(t){
@@ -391,31 +401,39 @@ export class MyApp {
     pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
   }
   exitApp(){
-    console.log(this.nav.length());
-    let that = this;
-    console.log("exit alert");
-    let alert = this.alertCtrl.create({
-          title: 'Exit',
-          message: 'Do you want to exit?',
-          buttons: [
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              handler: () => {
-                console.log('Cancel clicked');
+    this.toggleAlert();
+    if(this.alertStatus){
+      console.log(this.nav.length());
+      let that = this;
+      console.log("exit alert");
+      that.alert = this.alertCtrl.create({
+            message: 'Do you want to exit?',
+            buttons: [
+              {
+                text: 'Cancel',
+                role: 'cancel',
+                handler: () => {
+                  console.log('Cancel clicked');
+                  that.alertStatus = false;
+                }
+              },
+              {
+                text: 'Exit',
+                handler: () => {
+                  console.log('Exit clicked');
+                  that.platform.exitApp();
+                }
               }
-            },
-            {
-              text: 'Exit',
-              handler: () => {
-                console.log('Exit clicked');
-                that.platform.exitApp();
-              }
-            }
-          ]
-        });
-    alert.present();
+            ]
+          });
+      that.alert.present();
+    }
+    else{
+      this.alert.dismiss();
+    }
   }
-
+  toggleAlert(){
+    this.alertStatus = !this.alertStatus;
+  }
 
 }
