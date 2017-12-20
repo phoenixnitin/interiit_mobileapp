@@ -46,7 +46,7 @@ export class LivePage implements OnInit, OnDestroy{
 
  });
 this.loading.present(this.loading);
-this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1C-63d9Xrnf0RFU8a9PK2T22NgxHXlkcwxk9DmSFDGBQ&sheet=livedata')
+this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
 .subscribe(res => {
 this.data = res.json().livedata;
 for(let i =0;i<this.data.length;i++){
@@ -56,7 +56,7 @@ for(let i =0;i<this.data.length;i++){
   }
   else{ this.off = true;}
 }
-console.log(this.off)
+console.log(this.off);
 this.hideLoading();
 if(!this.loadeddata){
   this.loadeddata = this.data;
@@ -65,7 +65,7 @@ func();
 });
   }
 else{
-console.log("esle case")
+console.log("esle case");
 this._http.get('https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1aqljoEV1kLxP8ZtzsW3Cqj8-L72Q79trNJcsNM5B_Lo&sheet=livedata')
 .subscribe(res => {
 this.data = res.json().livedata;

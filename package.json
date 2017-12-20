@@ -84,7 +84,12 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {},
+            "ionic-plugin-keyboard": {
+                "variables": {
+                    "SENDER_ID": "255556131441"
+                },
+                "locator": "phonegap-plugin-push"
+            },
             "cordova-plugin-network-information": {},
             "com-sarriaroman-photoviewer": {},
             "cordova-plugin-fcm": {},

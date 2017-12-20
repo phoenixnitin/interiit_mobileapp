@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.interiit.android" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.interiit.android" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>InterIIT</name>
     <description>InterIIT Sports Meet App.</description>
     <author email="nitinkumar6912@gmail.com" href="http://www.interiit.com/">Nitin Kumar</author>
@@ -22,8 +22,10 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="android-targetSdkVersion" value="23" />
+    <preference name="SplashScreenDelay" value="30000" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="android-targetSdkVersion" value="24" />
     <preference name="YouTubeDataApiKey" value="[YOUR YOUTUBE API]" />
     <platform name="android">
         <allow-intent href="market:*" />
@@ -98,7 +100,10 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
     <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
     <plugin name="cordova.plugins.diagnostic" spec="^3.7.2" />
-    <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="ionic-plugin-keyboard" spec="^2.2.1">
+        <variable name="variables" value="[object Object]" />
+        <variable name="locator" value="phonegap-plugin-push" />
+    </plugin>
     <plugin name="phonegap-plugin-push" spec="~2.0.0">
         <variable name="SENDER_ID" value="255556131441" />
     </plugin>
